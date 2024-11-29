@@ -38,5 +38,8 @@
 .login-img-box img {
     width: 100%;
     display: block;
-    padding: var(--sp-8);
+    padding: var(--sp-4);
+    position: relative;
+    top: var(--sp-12);
+    right: -80px;
 }
