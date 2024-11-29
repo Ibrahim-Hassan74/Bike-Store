@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/queries.css" />
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+    </header>
+    <div class="contanier grid grid--2-cols">
+        <div class="login-text-box">
+            <h1 class="heading-primary">Login </h1>
+            <p class="login-description">
+                Login to access your account
+            </p>
+
+            <form class="login-form">
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <div class="signup">
+                    Don’t have an account? <a href="#">Sign up</a>
+                </div>
+            </form>
+        </div>
+        <div class="login-img-box">
+            <img src="assets/img/login.jpg" alt="login Image" />
+        </div>
+
+    </div>
+    <script>
+        const form = document.querySelector(".login-form");
+
+        async function sendData() {
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("https://example.org/post", {
+                    method: "POST",
+                    body: formData,
+                });
+                console.log(await response.json());
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            sendData();
+        });
+    </script>
+
+</body>
+
+</html>
