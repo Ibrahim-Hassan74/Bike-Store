@@ -1,0 +1,22 @@
+/* ******************************** */
+/* HERO SECTION */
+/* ******************************** */
+
+.hero-section {
+  padding: var(--sp-11);
+  background-image: linear-gradient(to left, #ffe3e3, #fff5f5);
+}
+
+.hero-img-box img {
+  width: 100%;
+  display: block;
+  transform: scale(1.1);
+  padding: var(--sp-6);
+  /* background-color: #000; */
+}
+
+.hero-description {
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  margin-bottom: var(--sp-8);
+}
