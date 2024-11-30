@@ -1,27 +1,77 @@
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+.register-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--sp-6);
+  row-gap: var(--sp-4);
+}
+
+.input-full {
+  grid-column: 1/-1;
+}
+
 .register-text-box {
-    width: 100%;
-    padding: var(--sp-10);
+  width: 100%;
+  padding: var(--sp-9) var(--sp-9) 0 var(--sp-9);
+}
+
+.register-img-box {
+  align-self: center;
 }
 
 .container-handaler {
-    display: grid;
-    column-gap: 1.4rem;
+  display: grid;
+  column-gap: 1.4rem;
+  row-gap: 1.2rem;
 }
 
 .login {
-    text-align: center;
-    margin-top: var(--sp-6);
-    font-size: var(--fs-4);
+  text-align: center;
+  margin-top: var(--sp-6);
+  font-size: var(--fs-4);
 }
 
-.login a {
-    text-decoration: none;
-    color: #e57373;
-    font-weight: 700;
+.login a:link,
+.login a:visited {
+  text-decoration: none;
+  color: #e57373;
+  font-weight: 600;
+}
+
+.login a:hover,
+.login a:active {
+  color: #c94e4e;
+  font-weight: 700;
 }
 
 .register-img-box img {
-    width: 100%;
-    display: block;
-    padding: var(--sp-8);
+  width: 100%;
+  display: block;
+  padding: var(--sp-8);
+}
+
+.input-container small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: -1.4rem;
+  left: 4px;
+  visibility: hidden;
+}
+
+.input-container.error small {
+  visibility: visible;
+}
+
+.input-container.success input {
+  border-color: var(--success-color);
 }

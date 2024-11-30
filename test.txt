@@ -1,0 +1,55 @@
+<main>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Your one-stop shop for all things cycling.
+            </h1>
+            <p class="hero-description">
+              The ultimate 365-day bike subscription for effortless rides all
+              year. Tailored to your style, needs, and adventures.
+            </p>
+            <a href="#" class="btn btn--full margin-right-sm">Discover Now</a>
+            <a href="#" class="btn btn--outline">Learn more &darr;</a>
+          </div>
+          <div class="hero-img-box">
+            <img src="assets/img/bike 07 copy.png" alt="Hero Image" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    /* ******************************** */
+/* HERO SECTION */
+/* ******************************** */
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.hero-img-box img {
+  width: 100%;
+  padding: var(--sp-6);
+  transform: scale(1.1);
+  /* background-color: #000; */
+  align-self: center;
+}
+.hero-img-box {
+}
+
+.hero-description {
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  margin-bottom: var(--sp-8);
+}

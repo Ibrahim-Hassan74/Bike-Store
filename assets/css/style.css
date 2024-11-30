@@ -1,22 +1,132 @@
 /* ******************************** */
 /* HERO SECTION */
 /* ******************************** */
-
-.hero-section {
-  padding: var(--sp-11);
-  background-image: linear-gradient(to left, #ffe3e3, #fff5f5);
+.main-header {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.5),
+      rgba(34, 34, 34, 0.5)
+    ),
+    url('/assets/img/bikeBG.jpg');
 }
 
-.hero-img-box img {
-  width: 100%;
-  display: block;
-  transform: scale(1.1);
-  padding: var(--sp-6);
-  /* background-color: #000; */
+.nav-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+
+.hero-container {
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-container-inner {
+  width: 40%;
 }
 
 .hero-description {
-  font-size: var(--fs-7);
+  font-size: 1.8rem;
   line-height: 1.6;
-  margin-bottom: var(--sp-8);
+  margin-bottom: 48px;
+}
+
+.black-bike {
+  position: relative;
+}
+
+.black-bike-box-1 {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/TRBO\ 2880x1620.jpg');
+}
+
+.black-bike-container-inner {
+  /* width: 120rem; */
+  width: 40%;
+}
+
+.black-bike-container-1 {
+  width: 120rem;
+  position: absolute;
+  left: 30%;
+  transform: translate(-30%, -50%);
+}
+
+.black-bike-container-buy {
+  top: 45%;
+}
+
+.black-bike-container-about {
+  /* width: 80%; */
+  top: 87%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 6.4rem;
+}
+
+.about-black-bike {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: center; */
+}
+
+.black-bike-box-2 {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/bike\ 07.jpg');
+}
+
+.black-bike-box-3 {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/bike\ 08.jpg');
+}
+
+.black-bike-box-4 {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/bike\ 09.jpg');
+}
+
+.black-bike-box-5 {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/bike\ 10.jpg');
+}
+
+.black-bike-box-6 {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/bike\ 11.jpg');
+}
+
+.black-bike-box-7 {
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.09),
+      rgba(34, 34, 34, 0.09)
+    ),
+    url('/assets/img/Bikes/bike\ 12.jpg');
 }
