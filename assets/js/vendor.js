@@ -6,4 +6,4 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const phoneNumber = document.getElementById('phone');
 const button = document.getElementById('submit--btn');
-const url = '';
+const url = 'https://localhost/Bike-store/auth/register.php';
