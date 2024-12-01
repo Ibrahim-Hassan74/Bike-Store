@@ -7,7 +7,7 @@
       rgba(34, 34, 34, 0.5),
       rgba(34, 34, 34, 0.5)
     ),
-    url('/assets/img/bikeBG.jpg');
+    url('../img/bikeBG.jpg');
 }
 
 .nav-container {
@@ -48,7 +48,7 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/TRBO\ 2880x1620.jpg');
+    url('../img/Bikes/TRBO\ 2880x1620.jpg');
 }
 
 .black-bike-container-inner {
@@ -88,7 +88,7 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/bike\ 07.jpg');
+    url('../img/Bikes/bike\ 07.jpg');
 }
 
 .black-bike-box-3 {
@@ -96,7 +96,7 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/bike\ 08.jpg');
+    url('../img/Bikes/bike\ 08.jpg');
 }
 
 .black-bike-box-4 {
@@ -104,7 +104,7 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/bike\ 09.jpg');
+    url('../img/Bikes/bike\ 09.jpg');
 }
 
 .black-bike-box-5 {
@@ -112,7 +112,7 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/bike\ 10.jpg');
+    url('../img/Bikes/bike\ 10.jpg');
 }
 
 .black-bike-box-6 {
@@ -120,7 +120,7 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/bike\ 11.jpg');
+    url('../img/Bikes/bike\ 11.jpg');
 }
 
 .black-bike-box-7 {
@@ -128,5 +128,5 @@
       rgba(34, 34, 34, 0.09),
       rgba(34, 34, 34, 0.09)
     ),
-    url('/assets/img/Bikes/bike\ 12.jpg');
+    url('../img/Bikes/bike\ 12.jpg');
 }
