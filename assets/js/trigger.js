@@ -1,6 +1,6 @@
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const ok =
+  const ok = [
     checkRequired([
       firstName,
       lastName,
@@ -8,19 +8,30 @@ form.addEventListener('submit', (e) => {
       password,
       password2,
       phoneNumber,
-    ]) &&
-    checkLength(username, 3, 15) &&
-    checkLength(password, 6, 25) &&
-    checkEmail(email) &&
-    checkPasswordsMatch(password, password2);
-  if (ok) {
-    const fd = new FormData();
-    fd.append('name', `${firstName.value} ${lastName.value}`);
-    fd.append('email', email.value);
-    fd.append('password', password.value);
-    fd.append('password2', password2.value);
-    fd.append('phone', phoneNumber.value);
-    sendHttpsRequest('POST', fd);
-    // form.reset();
+    ]),
+    checkLength(firstName, 3, 15),
+    checkLength(lastName, 3, 15),
+    checkLength(password, 6, 25),
+    checkEmail(email),
+    checkPasswordsMatch(password, password2),
+  ];
+
+  if (!ok.includes(false)) {
+    const fd = new FormData(form);
+    // const firstNameValue = firstName.value;
+    // const lastNameValue = lastName.value;
+    // const emailValue = email.value;
+    // const passwordValue = password.value;
+    // const password2Value = password2.value;
+    // const phoneNumberValue = phoneNumber.value;
+    // const data = {
+    //   firstName: firstNameValue,
+    //   lastName: lastNameValue,
+    //   email: emailValue,
+    //   password: passwordValue,
+    //   password2: password2Value,
+    //   phoneNumber: phoneNumberValue,
+    // }
+    sendHttpsRequest(fd);
   }
 });

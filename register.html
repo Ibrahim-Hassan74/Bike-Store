@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="assets/css/general.css" />
     <link rel="stylesheet" href="assets/css/register.css" />
     <link rel="stylesheet" href="assets/css/queries.css" />
+    <script src="assets/js/lib.js" defer></script>
     <title>Sign up</title>
   </head>
 
   <body>
     <div class="contanier register-box">
       <div class="register-text-box">
-        <h1 class="heading-primary">Sign up</h1>
+        <h1 class="input-heading-primary">Sign up</h1>
         <p class="login-description">
           let's get you all st up you can access your personal account.
         </p>
@@ -21,39 +22,43 @@
           <!-- <div class="container-handaler grid--2-cols"> -->
           <div class="input-container form-control">
             <label for="firstName">First Name</label>
-            <input type="text" name="firstName" required id="firstName" />
+            <input type="text" name="firstName" id="firstName" />
             <small>Error message</small>
           </div>
 
           <div class="input-container">
             <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" required id="lastName" />
+            <input type="text" name="lastName" id="lastName" />
             <small>Error message</small>
           </div>
 
           <div class="input-container">
             <label for="email">Email</label>
-            <input type="email" name="email" required id="email" />
+            <input type="text" name="email" id="email" />
             <small>Error message</small>
           </div>
           <div class="input-container">
             <label for="phone">Phone Number</label>
-            <input type="text" name="phone" required id="phone" />
+            <input type="text" name="phone" id="phone" />
             <small>Error message</small>
           </div>
           <!-- </div> -->
 
           <div class="input-container input-full">
             <label for="password">Password</label>
-            <input type="password" name="password" required id="password" />
+            <input type="password" name="password" id="password" />
             <small>Error message</small>
           </div>
           <div class="input-container input-full">
             <label for="password2">Confirm Password</label>
-            <input type="password" name="password2" required id="password2" />
+            <input type="password" name="password2" id="password2" />
             <small>Error message</small>
           </div>
-          <button type="submit" class="login-button input-full">
+          <button
+            type="submit"
+            class="login-button input-full"
+            id="submit--btn"
+          >
             Create account
           </button>
           <div class="login input-full">

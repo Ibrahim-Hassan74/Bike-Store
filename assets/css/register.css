@@ -8,6 +8,17 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.input-heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+  font-weight: 700;
+  /* color: #45260a; */
+  /* color: #343a40; */
+  letter-spacing: -0.5px;
+  color: #444;
+}
+
 #form {
   width: 100%;
   display: grid;
@@ -54,6 +65,12 @@
   font-weight: 700;
 }
 
+.login span {
+  /* font-size: var(--fs-7); */
+  font-weight: 700;
+  color: #777;
+}
+
 .register-img-box img {
   width: 100%;
   display: block;
@@ -74,4 +91,8 @@
 
 .input-container.success input {
   border-color: var(--success-color);
+}
+
+.input-container.error input {
+  border-color: var(--error-color);
 }

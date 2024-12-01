@@ -4,5 +4,6 @@ const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-const phoneNumber = document.getElementById('phoneNumber');
+const phoneNumber = document.getElementById('phone');
+const button = document.getElementById('submit--btn');
 const url = '';

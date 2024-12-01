@@ -263,6 +263,7 @@ body {
   font-size: var(--fs-5);
   line-height: 1.6;
   margin-bottom: var(--sp-8);
+  color: #666;
 }
 
 .input-container {
