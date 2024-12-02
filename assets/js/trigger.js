@@ -1,37 +1,26 @@
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const ok = [
-    checkRequired([
-      firstName,
-      lastName,
-      email,
-      password,
-      password2,
-      phoneNumber,
-    ]),
-    checkLength(firstName, 3, 15),
-    checkLength(lastName, 3, 15),
-    checkLength(password, 6, 25),
-    checkEmail(email),
-    checkPasswordsMatch(password, password2),
-  ];
-
-  if (!ok.includes(false)) {
-    const fd = new FormData(form);
-    // const firstNameValue = firstName.value;
-    // const lastNameValue = lastName.value;
-    // const emailValue = email.value;
-    // const passwordValue = password.value;
-    // const password2Value = password2.value;
-    // const phoneNumberValue = phoneNumber.value;
-    // const data = {
-    //   firstName: firstNameValue,
-    //   lastName: lastNameValue,
-    //   email: emailValue,
-    //   password: passwordValue,
-    //   password2: password2Value,
-    //   phoneNumber: phoneNumberValue,
-    // }
-    sendHttpsRequest(fd);
-  }
+window.addEventListener('DOMContentLoaded', () => {
+  mainNav.innerHTML = `
+            <div class="nav-logo">
+              <a href="index.html">
+                  <img src="assets/img/logo-img.png" alt="this is the logo navgation image" class="logo" />
+              </a>
+            </div>
+            <div class="nav-link">
+                <ul class="list-links">
+                    <li class="list-item"><a href="index.html">Home</a></li>
+                    <li class="list-item"><a href="accessories.html">Accessories</a></li>
+                    <li class="list-item"><a href="mountain.html">Mountain Collection</a></li>
+                    <li class="list-item"><a href="electric.html">Electric Bikes</a></li>
+                    <li class="list-item"><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-icon">
+                <a href="login.html">
+                    <ion-icon name="person"></ion-icon>
+                </a>
+                <a href="#">
+                    <ion-icon name="bag"></ion-icon>
+                </a>
+            </div>
+  `;
 });

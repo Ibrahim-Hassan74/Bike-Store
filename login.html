@@ -4,7 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login.css" />
     <link rel="stylesheet" href="assets/css/queries.css" />
     <script src="assets/js/lib.js" defer></script>
@@ -12,7 +21,10 @@
 </head>
 
 <body>
-    <div class="container ">
+    <header>
+        <nav class="main-nav-container grid"></nav>
+    </header>
+    <div class="container">
         <h1 class="heading-primary">Login</h1>
         <p class="login-description">Login to access your account</p>
 
@@ -37,27 +49,10 @@
             </div>
         </form>
     </div>
-
-    <script>
-        const form = document.querySelector('.login-form');
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email');
-            const password = document.getElementById('password');
-            const data = {
-                email: email.value,
-                password: password.value,
-            }
-            const formData = new FormData(form);
-
-            try {
-                const response = await axios.post('', formData)
-                console.log(response);
-            } catch (error) {
-                console.log('Error:', error.message);
-            }
-        });
-    </script>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/trigger.js"></script>
+    <script src="assets/js/form/login.js"></script>
+    
 </body>
 
 </html>
