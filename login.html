@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/general.css" />
@@ -8,65 +9,58 @@
     <link rel="stylesheet" href="assets/css/queries.css" />
     <script src="assets/js/lib.js" defer></script>
     <title>Login</title>
-  </head>
+</head>
 
-  <body>
-    <header>
-      <div class="logo"></div>
-    </header>
-    <div class="container grid grid--2-cols">
-      <div class="login-text-box">
+<body>
+    <div class="container ">
         <h1 class="heading-primary">Login</h1>
         <p class="login-description">Login to access your account</p>
 
         <form class="login-form">
-          <div class="input-container">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="input-container">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <div class="options">
-            <span>
-              <input type="checkbox" name="remember" id="remember" />
-              <label for="remember">Remember me</label>
-            </span>
-            <a href="#">Forgot Password</a>
-          </div>
-          <button type="submit" class="login-button">Login</button>
-          <div class="signup">
-            Don’t have an account? <a href="register.html">Sign up</a>
-          </div>
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="options">
+                <span>
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">Remember me</label>
+                </span>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+            <div class="signup">
+                Don’t have an account? <a href="register.html">Sign up</a>
+            </div>
         </form>
-      </div>
-      <div class="login-img-box">
-        <img src="assets/img/bike 13.png" alt="login Image" />
-      </div>
     </div>
 
     <script>
-      const form = document.querySelector('.login-form');
-      form.addEventListener('submit', async function (event) {
-        event.preventDefault();
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
-        const data = {
-          email: email.value,
-          password: password.value,
-        }
-        const formData = new FormData(form);
+        const form = document.querySelector('.login-form');
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const data = {
+                email: email.value,
+                password: password.value,
+            }
+            const formData = new FormData(form);
 
-        try {
-          const response = await axios.post('', formData)
-          console.log(response);
-        } catch (error) {
-          console.log('Error:', error.message);
-        }
-      });
+            try {
+                const response = await axios.post('', formData)
+                console.log(response);
+            } catch (error) {
+                console.log('Error:', error.message);
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
-  </body>
+</body>
+
 </html>
