@@ -1,93 +1,93 @@
 :root {
-    --success-color: #2ecc71;
-    --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
 }
 
 .register-box {
-    color: #000;
-    max-width: 600px;
-    margin: var(--sp-6) auto;
-    box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
+  color: #000;
+  max-width: 600px;
+  margin: var(--sp-6) auto;
+  box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
 .input-heading-primary {
-    font-size: 3rem;
-    line-height: 1.05;
-    margin-bottom: 3.2rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #000;
+  font-size: 3rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #000;
 }
 
 #form {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--sp-6);
-    row-gap: var(--sp-4);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--sp-6);
+  row-gap: var(--sp-4);
 }
 
 .input-full {
-    grid-column: 1/-1;
+  grid-column: 1/-1;
 }
 
 .register-text-box {
-    width: 100%;
-    padding: var(--sp-7) var(--sp-9);
+  width: 100%;
+  padding: var(--sp-7) var(--sp-9);
 }
 
 .register-img-box {
-    align-self: center;
+  align-self: center;
 }
 
 .container-handaler {
-    display: grid;
-    column-gap: 1.4rem;
-    row-gap: 1.2rem;
+  display: grid;
+  column-gap: 1.4rem;
+  row-gap: 1.2rem;
 }
 
 .login {
-    text-align: center;
-    margin-top: var(--sp-6);
-    font-size: var(--fs-4);
+  text-align: center;
+  margin-top: var(--sp-6);
+  font-size: var(--fs-4);
 }
 
 .login a:link,
 .login a:visited {
-    text-decoration: none;
-    color: #e57373;
-    font-weight: 600;
+  text-decoration: none;
+  color: #e57373;
+  font-weight: 600;
 }
 
 .login a:hover,
 .login a:active {
-    color: #c94e4e;
-    font-weight: 700;
+  color: #c94e4e;
+  font-weight: 700;
 }
 
 .login span {
-    /* font-size: var(--fs-7); */
-    font-weight: 700;
-    color: #777;
+  /* font-size: var(--fs-7); */
+  font-weight: 700;
+  color: #777;
 }
 
 .input-container small {
-    color: var(--error-color);
-    position: absolute;
-    bottom: -1.4rem;
-    left: 4px;
-    visibility: hidden;
+  color: var(--error-color);
+  position: absolute;
+  bottom: -1.4rem;
+  left: 4px;
+  visibility: hidden;
 }
 
 .input-container.error small {
-    visibility: visible;
+  visibility: visible;
 }
 
 .input-container.success input {
-    border-color: var(--success-color);
+  border-color: var(--success-color);
 }
 
 .input-container.error input {
-    border-color: var(--error-color);
+  border-color: var(--error-color);
 }

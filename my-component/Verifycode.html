@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/login.css" />
     <link rel="stylesheet" href="assets/css/queries.css" />
     <link rel="stylesheet" href="assets/css/forgotpassword.css" />
+    <link rel="stylesheet" href="assets/css/verifycode.css" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -30,21 +31,23 @@
     </header>
     <div class="container">
       <div class="go-back">
-        <a href="login.html"> < Back to login</a>
+        <a href="login.html"> &lt; Back to login</a>
       </div>
-      <h1 class="heading-primary">Forgot your password?</h1>
+      <h1 class="heading-primary">Verify code</h1>
       <p class="login-description">
-        Don’t worry, happens to all of us. Enter your email below to recover
-        your password
+        An authentication code has been sent to your email.
       </p>
 
       <form class="login-form">
         <div class="input-container">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <label for="code">Enter Code</label>
+          <input type="text" id="code" name="code" required />
         </div>
 
-        <button type="submit" class="login-button">Submit</button>
+        <div class="resend">
+          Didn’t receive a code?<a href="register.html">Resend</a>
+        </div>
+        <button type="submit" class="login-button">verify</button>
       </form>
     </div>
     <script src="assets/js/vendor.js"></script>
