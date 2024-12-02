@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/general.css" />
     <link rel="stylesheet" href="assets/css/login.css" />
     <link rel="stylesheet" href="assets/css/queries.css" />
     <link rel="stylesheet" href="assets/css/forgotpassword.css" />
     <link rel="stylesheet" href="assets/css/verifycode.css" />
-
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
+    <link rel="stylesheet" href="assets/css/queries.css" />
+    <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/lib.js" defer></script>
-    <title>Forgot Password </title>
-</head>
+    <title>Forgot Password</title>
+  </head>
 
-<body>
-    <div class="container ">
-        <div class="go-back">
-            <a href="login.html">
-                < Back to login</a>
+  <body>
+    <header>
+      <nav class="main-nav-container grid"></nav>
+    </header>
+    <div class="container">
+      <div class="go-back">
+        <a href="login.html"> < Back to login</a>
+      </div>
+      <h1 class="heading-primary">Verify code</h1>
+      <p class="login-description">
+        An authentication code has been sent to your email.
+      </p>
+
+      <form class="login-form">
+        <div class="input-container">
+          <label for="code">Enter Code</label>
+          <input type="text" id="code" name="code" required />
         </div>
-        <h1 class="heading-primary">Verify code</h1>
-        <p class="login-description">An authentication code has been sent to your email.</p>
 
-        <form class="login-form">
-            <div class="input-container">
-                <label for="code">Enter Code</label>
-                <input type="text" id="code" name="code" required />
-            </div>
-
-            <div class="resend">
-                Didn’t receive a code?<a href="register.html">Resend</a>
-            </div>
-            <button type="submit" class="login-button">verify</button>
-
-        </form>
+        <div class="resend">
+          Didn’t receive a code?<a href="register.html">Resend</a>
+        </div>
+        <button type="submit" class="login-button">verify</button>
+      </form>
     </div>
-
-</body>
-
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/trigger.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
