@@ -36,14 +36,17 @@
     font-weight: 700;
 }
 
-.card-price {
-    font-size: var(--sp-5);
-    color: var(--secondary-color);
-    margin: var(--sp-3) 0 var(--sp-5);
+.card-name {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--sp-5);
+}
+
+.card-price {
+    font-size: var(--sp-5);
+    color: var(--secondary-color);
+    margin: var(--sp-3) 0 var(--sp-5);
 }
 
 .card-list {
@@ -53,9 +56,9 @@
 }
 
 .card-icon {
-    color: var(--secondary-color);
     font-size: var(--fs-6);
     font-weight: 600;
+    color: var(--primary-color);
 }
 
 .card-content a:link,

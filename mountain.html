@@ -11,31 +11,37 @@
     <link rel="stylesheet" href="assets/css/queries.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>Document</title>
+    <title>Mountain</title>
 </head>
 
 <body>
     <header>
         <nav class="main-nav-container grid">
             <div class="nav-logo">
-                <img src="assets/img/logo-img.png" alt="this is the logo navgation image" class="logo" />
+                <a href="index.html">
+                    <img src="assets/img/logo-img.png" alt="this is the logo navgation image" class="logo" />
+                </a>
             </div>
             <div class="nav-link">
                 <ul class="list-links">
-                    <li class="list-item">Home</li>
-                    <li class="list-item">Accessories</li>
-                    <li class="list-item">Mountain Collection</li>
-                    <li class="list-item">Electric Bikes</li>
-                    <li class="list-item">About</li>
+                    <li class="list-item"><a href="index.html">Home</a></li>
+                    <li class="list-item"><a href="accessories.html">Accessories</a></li>
+                    <li class="list-item"><a href="mountain.html">Mountain Collection</a></li>
+                    <li class="list-item"><a href="electric.html">Electric Bikes</a></li>
+                    <li class="list-item"><a href="about.html">About</a></li>
                 </ul>
             </div>
             <div class="nav-icon">
-                <ion-icon name="person"></ion-icon>
-                <ion-icon name="bag"></ion-icon>
+                <a href="login.html">
+                    <ion-icon name="person"></ion-icon>
+                </a>
+                <a href="#">
+                    <ion-icon name="bag"></ion-icon>
+                </a>
+
             </div>
         </nav>
     </header>
-
     <!-- <h1 class="heading-primary">Cycling Essentials</h1> -->
     <section class="electric-bike-section">
         <div class="electric-bike grid--3-cols">
@@ -46,18 +52,21 @@
                 </p>
             </div>
             <!-- <a href="detaile"></a> -->
+
             <div class="card" onclick="window.location.href='details1.html';">
                 <div class="card-image">
                     <img src="assets/img/electric/bike5.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Electric Cruiser 200</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span><del>$1,299.99</del> $974.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -67,13 +76,15 @@
                     <img src="assets/img/electric/bike2.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Electric Mountain Bike 5000</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span>$1,999.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -82,13 +93,15 @@
                     <img src="assets/img/electric/bike8.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Hybrid Bike 250</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span>Hybrid Bike 250</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -97,13 +110,15 @@
                     <img src="assets/img/electric/bike3.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Mountain Explorer 3000</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span><del>$899.99 </del> $674.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -112,13 +127,15 @@
                     <img src="assets/img/electric/bike4.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Trail Blazer 400</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span>$949.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -127,13 +144,15 @@
                     <img src="assets/img/electric/bike5.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Urban Commuter 500</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span><del>$599.99</del> $449.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -142,13 +161,15 @@
                     <img src="assets/img/electric/bike6.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Electric Mountain Bike 1200</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span><del>$1,299.99</del> $974.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -157,13 +178,15 @@
                     <img src="assets/img/electric/bike7.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Electric Cruiser 200</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span><del>$1,299.99</del> $974.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
@@ -172,13 +195,15 @@
                     <img src="assets/img/electric/bike1.jpg" alt="electric bike" />
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Electric Cruiser 200</h3>
                     <ul class="card-list">
-                        <li class="card-price">
+                        <li class="card-name">
                             <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-                            <span><del>$1,299.99</del> $974.99</span>
+                            <h3 class="card-title">Trail Blazer 400</h3>
                         </li>
                     </ul>
+                    <div class="card-price">
+                        <span><del>$1,299.99</del> $974.99</span>
+                    </div>
                     <a href="#">Add to cart</a>
                 </div>
             </div>
