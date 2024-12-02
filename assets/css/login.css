@@ -15,6 +15,11 @@
     font-size: var(--fs-3);
 }
 
+.options a {
+    text-decoration: none;
+    color: #e57373;
+}
+
 .options span {
     display: flex;
     align-items: center;

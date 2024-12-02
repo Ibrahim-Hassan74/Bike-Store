@@ -1,0 +1,12 @@
+.resend {
+    color: #000;
+    text-align: center;
+    margin: var(--sp-6) 0;
+    font-size: var(--fs-4);
+}
+
+.resend a {
+    text-decoration: none;
+    color: #e57373;
+    font-weight: 700;
+}
