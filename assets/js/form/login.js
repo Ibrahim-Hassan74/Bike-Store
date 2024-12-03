@@ -1,5 +1,5 @@
-const form = document.querySelector('.login-form');
-form.addEventListener('submit', async function (event) {
+const formLogin = document.querySelector('.login-form');
+formLogin.addEventListener('submit', async function (event) {
   event.preventDefault();
   const email = document.getElementById('email');
   const password = document.getElementById('password');
@@ -7,10 +7,10 @@ form.addEventListener('submit', async function (event) {
     email: email.value,
     password: password.value,
   };
-  const formData = new FormData(form);
+  const formData = new FormData(formLogin);
 
   try {
-    const response = await axios.post('', formData);
+    const response = await axios.post(loginUrl, formData);
     console.log(response);
   } catch (error) {
     console.log('Error:', error.message);

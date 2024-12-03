@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   mainNav.innerHTML = `
             <div class="nav-logo">
               <a href="index.html">
-                  <img src="assets/img/logo-img.png" alt="this is the logo navgation image" class="logo" />
+                  <img src="../assets/img/logo-img.png" alt="this is the logo navgation image" class="logo" />
               </a>
             </div>
             <div class="nav-link">
