@@ -297,7 +297,7 @@ body {
 
 .input-container *:focus {
   outline: none;
-  box-shadow: 0 0 0 0.5rem #fdeee980;
+  box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, 0.06);
 }
 
 .login-button {

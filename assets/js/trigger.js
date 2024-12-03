@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="nav-link">
                 <ul class="list-links">
-                    <li class="list-item"><a href="index.html">Home</a></li>
+                    <li class="list-item"><a href="../index.html">Home</a></li>
                     <li class="list-item"><a href="accessories.html">Accessories</a></li>
                     <li class="list-item"><a href="mountain.html">Mountain Collection</a></li>
                     <li class="list-item"><a href="electric.html">Electric Bikes</a></li>

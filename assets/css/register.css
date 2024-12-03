@@ -56,13 +56,13 @@
 .login a:link,
 .login a:visited {
   text-decoration: none;
-  color: #e57373;
+  color: #555;
   font-weight: 600;
 }
 
 .login a:hover,
 .login a:active {
-  color: #c94e4e;
+  color: #999;
   font-weight: 700;
 }
 

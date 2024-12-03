@@ -1,52 +1,64 @@
 .container {
-    max-width: 550px;
-    margin: var(--sp-8) auto;
-    padding: var(--sp-10);
-    color: #000;
-    box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
+  max-width: 550px;
+  margin: var(--sp-8) auto;
+  padding: var(--sp-10);
+  color: #000;
+  box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
 .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--sp-6);
-    font-size: var(--fs-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-6);
+  font-size: var(--fs-3);
 }
 
-.options a {
-    text-decoration: none;
-    color: #e57373;
+.options a:link,
+.options a:visited {
+  text-decoration: none;
+  color: #555;
+}
+
+.options a:hover,
+.options a:active {
+  color: #999;
 }
 
 .options span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .signup {
-    color: #000;
-    text-align: center;
-    margin-top: var(--sp-6);
-    font-size: var(--fs-4);
+  color: #000;
+  text-align: center;
+  margin-top: var(--sp-6);
+  font-size: var(--fs-4);
 }
 
-.signup a {
-    text-decoration: none;
-    color: #e57373;
-    font-weight: 700;
+.signup a:link,
+.signup a:visited {
+  text-decoration: none;
+  color: #777;
+  font-weight: 700;
+}
+
+.signup a:hover,
+.signup a:active {
+  color: #999;
 }
 
 .login-img-box img {
-    width: 100%;
-    display: block;
-    padding: var(--sp-8);
-    transform: scale(1.7);
+  width: 100%;
+  display: block;
+  padding: var(--sp-8);
+  transform: scale(1.7);
 }
 
 .login-img-box {
-    align-self: center;
+  align-self: center;
 }
