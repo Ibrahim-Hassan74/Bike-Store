@@ -9,3 +9,5 @@ const phoneNumber = document.getElementById('phone');
 const button = document.getElementById('submit--btn');
 const registerUrl = '';
 const loginUrl = '';
+const forgotpassUrl = '';
+const verifyUrl = '';
