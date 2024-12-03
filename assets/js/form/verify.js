@@ -39,6 +39,7 @@ formLogin.addEventListener('submit', async function (event) {
             <button type="submit" class="login-button">Set Password</button>
           </form>
           `;
+        cnt = 1;
       }
     } catch (error) {
       console.log('Error:', error.message);
@@ -56,7 +57,7 @@ formLogin.addEventListener('submit', async function (event) {
       console.log(response);
       if (response.status === 200) {
         // alert('Password set successfully!');
-        window.location.href = 'login.html';
+        window.location.href = '/my-component/login.html';
       }
     } catch (error) {
       console.log('Error:', error.message);
