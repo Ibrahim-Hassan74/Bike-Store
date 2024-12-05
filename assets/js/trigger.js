@@ -106,4 +106,6 @@ window.addEventListener('DOMContentLoaded', () => {
         </nav>
       </div>
   `;
+  const year = footer.querySelector('.year');
+  year.innerHTML = new Date().getFullYear();
 });
