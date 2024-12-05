@@ -15,7 +15,7 @@ async function handleSubmit(event) {
       window.location.href = '/my-component/setpassword.html';
     }
   } catch (error) {
-    console.log('Error:', error.message);
+    console.log('Error:', error.toJSON());
   }
 }
 formLogin.addEventListener('submit', handleSubmit);

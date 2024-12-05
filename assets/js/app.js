@@ -3,7 +3,7 @@ async function sendHttpsRequest(data) {
     const response = await axios.post(registerUrl, data);
     console.log(response);
   } catch (error) {
-    console.log('Error:', error.message);
+    console.log('Error:', error.toJSON());
   }
 }
 

@@ -13,6 +13,6 @@ formLogin.addEventListener('submit', async function (event) {
     window.location.href = '/my-component/Verifycode.html';
     // window.open('/../../../my-component/Verifycode.html');
   } catch (error) {
-    console.log('Error:', error.message);
+    console.log('Error:', error.toJSON());
   }
 });

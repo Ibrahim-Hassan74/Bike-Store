@@ -11,6 +11,6 @@ formLogin.addEventListener('submit', async function (event) {
     const response = await axios.post(setpassUrl, data);
     console.log(response);
   } catch (error) {
-    console.log('Error:', error.message);
+    console.log('Error:', error.toJSON());
   }
 });
