@@ -24,7 +24,7 @@ header {
   position: fixed;
   top: 0;
   padding: var(--sp-7) var(--sp-7);
-  background-color: #000;
+  background-color: #111;
   align-items: center;
   font-size: 1.6rem;
   grid-template-columns: 1fr 3fr 1fr;
@@ -68,13 +68,14 @@ header {
 .nav-link a:visited {
   text-decoration: none;
   color: #fff;
+  transition: all 0.4s;
 }
 
 .nav-icon a:hover,
 .nav-icon a:active,
 .nav-link a:hover,
 .nav-link a:active {
-  color: #cccccc;
+  color: #aaa;
 }
 
 .electric-bike-text-box {
@@ -225,4 +226,83 @@ header {
       rgba(34, 34, 34, 0.09)
     ),
     url('../img/Bikes/bike\ 12.jpg');
+}
+
+/**************************/
+/* FOOTER */
+/**************************/
+
+.footer {
+  color: #ddd;
+  background: #222;
+  padding: 12.8rem 0;
+  /* border-top: 1px solid #eee; */
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #aaa;
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #bbb;
+  transition: all 0.4s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #777;
 }
