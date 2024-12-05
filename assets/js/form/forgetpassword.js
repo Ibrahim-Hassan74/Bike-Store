@@ -8,7 +8,11 @@ formLogin.addEventListener('submit', async function (event) {
   document.cookie = `email=${email.value}`;
   // const formData = new FormData(formLogin);
   try {
-    const response = await axios.post(forgotpassUrl, data);
+    const response = await axios.post(forgotpassUrl, data, {
+      headers: {
+        Cookie: `email=${email.value}`,
+      },
+    });
     console.log(response);
     window.location.href = '/my-component/Verifycode.html';
     // window.open('/../../../my-component/Verifycode.html');

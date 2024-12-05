@@ -8,7 +8,6 @@ async function handleSubmit(event) {
     OTP: code.value,
   };
   try {
-    axios.defaults.withCredentials = true;
     const response = await axios.post(verifyUrl, data);
     console.log(response);
     if (response.status === 200) {
