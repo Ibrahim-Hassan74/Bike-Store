@@ -1,14 +1,12 @@
 const formLogin = document.querySelector('.login-form');
 formLogin.addEventListener('submit', async function (event) {
   event.preventDefault();
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
+  const password = formLogin.getElementById('newpassword');
+  const password2 = formLogin.getElementById('confirmpassword');
   const data = {
-    email: email.value,
     password: password.value,
+    password2: password2.value,
   };
-  // const formData = new FormData(formLogin);
-
   try {
     const response = await axios.post(loginUrl, data);
     console.log(response);
