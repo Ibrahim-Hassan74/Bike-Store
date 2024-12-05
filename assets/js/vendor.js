@@ -8,7 +8,3 @@ const password2 = document.getElementById('password2');
 const phoneNumber = document.getElementById('phone');
 const button = document.getElementById('submit--btn');
 const footer = document.querySelector('.footer');
-const registerUrl = '';
-const loginUrl = '';
-const forgotpassUrl = '';
-const verifyUrl = '';

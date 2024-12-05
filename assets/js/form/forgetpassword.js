@@ -5,14 +5,10 @@ formLogin.addEventListener('submit', async function (event) {
   const data = {
     email: email.value,
   };
-  document.cookie = `email=${email.value}`;
+  sessionStorage.setItem('email', email.value);
   // const formData = new FormData(formLogin);
   try {
-    const response = await axios.post(forgotpassUrl, data, {
-      headers: {
-        Cookie: `email=${email.value}`,
-      },
-    });
+    const response = await axios.post(forgotpassUrl, data);
     console.log(response);
     window.location.href = '/my-component/Verifycode.html';
     // window.open('/../../../my-component/Verifycode.html');

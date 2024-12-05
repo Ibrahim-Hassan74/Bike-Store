@@ -6,6 +6,7 @@ async function handleSubmit(event) {
   const code = document.getElementById('code');
   const data = {
     OTP: code.value,
+    email: sessionStorage.getItem('email'),
   };
   try {
     const response = await axios.post(verifyUrl, data);
