@@ -8,6 +8,11 @@ header {
   position: relative;
 }
 
+#main-nav-headler {
+  position: static;
+  background: transparent;
+}
+
 .electric-bike {
   padding: var(--sp-7) var(--sp-11) var(--sp-11) var(--sp-11);
   display: grid;
@@ -107,7 +112,7 @@ header {
     url('../img/bikeBG.jpg');
 }
 
-.nav-container {
+/* .nav-container {
   max-width: 120rem;
   margin: 0 auto;
   font-size: 20px;
@@ -115,7 +120,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
-}
+} */
 
 .hero-container {
   width: 1200px;

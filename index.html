@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="assets/css/general.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/queries.css" />
@@ -12,11 +20,12 @@
   <body>
     <div id="register"></div>
     <header class="bgimg-style main-header">
-      <nav class="nav-container">
-        <div>LOGO</div>
-        <div>NAVIGATION</div>
+      <nav class="main-nav-container grid" id="main-nav-headler">
+        <!-- <div>LOGO</div>
+        <div>NAVIGATION</div> -->
       </nav>
-
+    </header>
+    <main>
       <div class="hero-container">
         <div class="hero-container-inner">
           <h1 class="heading-primary">The Power To Ride More Trails</h1>
@@ -30,8 +39,6 @@
           <a href="#" class="btn btn--full">Shop All Bikes</a>
         </div>
       </div>
-    </header>
-    <main>
       <section class="black-bike">
         <!-- First black bike -->
 
@@ -252,7 +259,8 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer"></footer>
+
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/trigger.js"></script>
     <script src="assets/js/app.js"></script>

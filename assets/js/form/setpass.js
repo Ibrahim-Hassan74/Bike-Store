@@ -4,12 +4,15 @@ formLogin.addEventListener('submit', async function (event) {
   const password = document.getElementById('newpassword');
   const password2 = document.getElementById('confirmpassword');
   const data = {
+    email: sessionStorage.getItem('email'),
     password: password.value,
     password2: password2.value,
   };
   try {
     const response = await axios.post(setpassUrl, data);
     console.log(response);
+    sessionStorage.removeItem('email');
+    window.location.href = '/my-component/login.html';
   } catch (error) {
     console.log('Error:', error.toJSON());
   }

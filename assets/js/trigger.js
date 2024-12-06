@@ -1,22 +1,43 @@
 window.addEventListener('DOMContentLoaded', () => {
   // add nav bar to all component in my components
+
+  const currentFileName = window.location.pathname.split('/').pop();
+  let links = [
+    '../index.html',
+    'accessories.html',
+    'mountain.html',
+    'electric.html',
+    'about.html',
+    'login.html',
+    '../assets/img/logo-img.png',
+  ];
+  console.log(currentFileName);
+  if (currentFileName === 'index.html') {
+    // pinNavBar();
+    links[0] = 'index.html';
+    links[6] = 'assets/img/logo-img.png';
+    for (let i = 1; i < links.length - 1; i++) {
+      links[i] = 'my-component/' + links[i];
+    }
+  }
+
   mainNav.innerHTML = `
             <div class="nav-logo">
-              <a href="index.html">
-                  <img src="../assets/img/logo-img.png" alt="this is the logo navgation image" class="logo" />
+              <a href="${links[0]}">
+                  <img src="${links[6]}" alt="this is the logo navgation image" class="logo" />
               </a>
             </div>
             <div class="nav-link">
                 <ul class="list-links">
-                    <li class="list-item"><a href="../index.html">Home</a></li>
-                    <li class="list-item"><a href="accessories.html">Accessories</a></li>
-                    <li class="list-item"><a href="mountain.html">Mountain Collection</a></li>
-                    <li class="list-item"><a href="electric.html">Electric Bikes</a></li>
-                    <li class="list-item"><a href="about.html">About</a></li>
+                    <li class="list-item"><a href="${links[0]}">Home</a></li>
+                    <li class="list-item"><a href="${links[1]}">Accessories</a></li>
+                    <li class="list-item"><a href="${links[2]}">Mountain Collection</a></li>
+                    <li class="list-item"><a href="${links[3]}">Electric Bikes</a></li>
+                    <li class="list-item"><a href="${links[4]}">About</a></li>
                 </ul>
             </div>
             <div class="nav-icon">
-                <a href="login.html">
+                <a href="${links[5]}">
                     <ion-icon name="person"></ion-icon>
                 </a>
                 <a href="#">
@@ -106,6 +127,31 @@ window.addEventListener('DOMContentLoaded', () => {
         </nav>
       </div>
   `;
+  // Get the current file name
+
   const year = footer.querySelector('.year');
   year.innerHTML = new Date().getFullYear();
 });
+
+// function pinNavBar() {
+//   const sectionEl = document.querySelector('.black-bike-box-2');
+//   const obs = new IntersectionObserver(
+//     (entries) => {
+//       const ent = entries[0];
+//       console.log(ent);
+
+//       // if (!ent.isIntersecting) {
+//       //   document.querySelector('.main-nav-container').id = 'main-nav-headler';
+//       // }
+//       if (ent.isIntersecting) {
+//         document.querySelector('.main-nav-container').id = '';
+//       }
+//     },
+//     {
+//       root: null,
+//       threshold: 0,
+//       rootMargin: '-700px',
+//     }
+//   );
+//   obs.observe(sectionEl);
+// }
