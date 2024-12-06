@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <p class="footer-heading">Contact us</p>
           <address class="contacts">
             <p class="address">
-              Beni Imran, Dermawas, Minya Governorate, Egypt
+              Minya Governorate, Egypt
             </p>
             <p>
               <a class="footer-link" href="tel:415-201-6370">111-222-333</a
