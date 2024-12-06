@@ -12,6 +12,7 @@ async function handleSubmit(event) {
     const response = await axios.post(verifyUrl, data);
     console.log(response);
     if (response.status === 200) {
+      sessionStorage.removeItem('email');
       window.location.href = '/my-component/setpassword.html';
     }
   } catch (error) {

@@ -36,6 +36,11 @@
   font-weight: 700;
 }
 
+.card-text,
+.card-description {
+  display: none;
+}
+
 .card-name {
   display: flex;
   align-items: center;
