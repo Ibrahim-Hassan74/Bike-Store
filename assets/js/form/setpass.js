@@ -9,10 +9,18 @@ formLogin.addEventListener('submit', async function (event) {
     password2: password2.value,
   };
   try {
-    const response = await axios.post(setpassUrl, data);
-    console.log(response);
-    sessionStorage.removeItem('email');
-    window.location.href = '/my-component/login.html';
+    const ok = [
+      checkRequired([password, password2]),
+      checkLength(password, 8, 25),
+      checkLength(password2, 8, 25),
+      checkPasswordsMatch(password, password2),
+    ];
+    if (!ok.includes(false)) {
+      const response = await axios.post(setpassUrl, data);
+      console.log(response);
+      window.location.href = '/my-component/login.html';
+      // sessionStorage.removeItem('email');
+    }
   } catch (error) {
     console.log('Error:', error.toJSON());
   }

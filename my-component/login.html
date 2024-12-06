@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/login.css" />
     <link rel="stylesheet" href="../assets/css/queries.css" />
+    <link rel="stylesheet" href="../assets/css/register.css" />
     <script src="../assets/js/lib.js" defer></script>
     <title>Login</title>
 </head>
@@ -31,11 +32,13 @@
         <form class="login-form">
             <div class="input-container">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <input type="text" id="email" name="email" />
+                <small>Error message</small>
             </div>
             <div class="input-container">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required />
+                <input type="password" id="password" name="password" />
+                <small>Error message</small>
             </div>
             <div class="options">
                 <span>
@@ -51,6 +54,7 @@
         </form>
     </div>
     <footer class="footer"></footer>
+    <script src="../assets/js/app.js"></script>
     <script src="../assets/js/vendor.js"></script>
     <script src="../assets/js/trigger.js"></script>
     <script src="../assets/js/form/login.js"></script>

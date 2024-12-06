@@ -32,8 +32,10 @@ function checkEmail(input) {
   // console.log(input.value, re.test(input.value.trim()));
   if (re.test(input.value.trim())) {
     showSuccess(input);
+    return true;
   } else {
     showError(input, 'Email is not valid');
+    return false;
   }
 }
 

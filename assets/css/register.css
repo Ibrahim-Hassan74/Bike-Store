@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--sp-6);
-  row-gap: var(--sp-4);
+  /* row-gap: var(--sp-4); */
 }
 
 .input-full {

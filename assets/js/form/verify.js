@@ -9,11 +9,13 @@ async function handleSubmit(event) {
     email: sessionStorage.getItem('email'),
   };
   try {
-    const response = await axios.post(verifyUrl, data);
-    console.log(response);
-    if (response.status === 200) {
-      sessionStorage.removeItem('email');
-      window.location.href = '/my-component/setpassword.html';
+    if (checkRequired([code])) {
+      const response = await axios.post(verifyUrl, data);
+      console.log(response);
+      if (response.status === 200) {
+        sessionStorage.removeItem('email');
+        window.location.href = '/my-component/setpassword.html';
+      }
     }
   } catch (error) {
     console.log('Error:', error.toJSON());

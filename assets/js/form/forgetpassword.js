@@ -8,11 +8,13 @@ formLogin.addEventListener('submit', async function (event) {
   sessionStorage.setItem('email', email.value);
   // const formData = new FormData(formLogin);
   try {
-    const response = await axios.post(forgotpassUrl, data);
-    console.log(response);
-    window.location.href = '/my-component/Verifycode.html';
+    if (checkEmail(email)) {
+      window.location.href = '/my-component/Verifycode.html';
+      const response = await axios.post(forgotpassUrl, data);
+      console.log(response);
+    }
     // window.open('/../../../my-component/Verifycode.html');
   } catch (error) {
-    console.log('Error:', error.toJSON());
+    console.log('Error:', error.message);
   }
 });
