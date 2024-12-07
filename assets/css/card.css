@@ -84,3 +84,7 @@
   background-color: var(--secondary-color);
   transform: scale(1.02);
 }
+
+.accesories-text-container {
+  margin-top: 3.2rem;
+}
