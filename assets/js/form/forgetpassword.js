@@ -1,5 +1,5 @@
-const formLogin = document.querySelector('.login-form');
-formLogin.addEventListener('submit', async function (event) {
+const formPass = document.querySelector('.forget-password');
+formPass.addEventListener('submit', async function (event) {
   event.preventDefault();
   const email = document.getElementById('email');
   const data = {
