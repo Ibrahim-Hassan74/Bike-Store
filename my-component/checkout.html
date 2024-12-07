@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../assets/css/general.css" />
+    <link rel="stylesheet" href="../assets/css/register.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/checkout.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav-container grid"></nav>
+    </header>
+    <div class="container grid grid--2-cols checkout-container">
+      <!-- Left Panel for Billing Details -->
+      <div class="left-panel">
+        <h1 class="input-heading-primary">Checkout</h1>
+        <p class="login-description">Billing Details</p>
+        <form>
+          <div class="input-container">
+            <label for="first-name">First Name *</label>
+            <input
+              type="text"
+              id="first-name"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label for="last-name">Last Name *</label>
+            <input
+              type="text"
+              id="last-name"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+
+          <div class="input-container">
+            <label for="country">Country / Region *</label>
+            <select id="country" required>
+              <option value="">Select a country</option>
+              <option value="us">EGYPT(EGY)</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="street-address">Street Address *</label>
+            <input
+              type="text"
+              id="street-address"
+              placeholder="Street Address"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label for="city">Town / City *</label>
+            <input type="text" id="city" placeholder="Town / City" required />
+          </div>
+          <div class="input-container">
+            <label for="state">State *</label>
+            <select id="state" required>
+              <option value="">Select a state</option>
+              <option value="nh">New Minya</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="zip-code">ZIP Code *</label>
+            <input type="text" id="zip-code" placeholder="ZIP Code" required />
+          </div>
+          <div class="input-container">
+            <label for="phone">Phone *</label>
+            <input type="text" id="phone" placeholder="Phone" required />
+          </div>
+
+          <div class="input-container">
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Panel for Order Summary -->
+      <div class="right-panel">
+        <div class="order-summary">
+          <h2 class="heading-secondary">Your Order</h2>
+          <ul>
+            <li><span>Name The Bike</span><span>$Price</span></li>
+            <li><span>Subtotal</span><span>$Price</span></li>
+            <li><span>Shipping</span><span>Flat rate</span></li>
+            <li class="total"><span>Total</span><span>Totall</span></li>
+          </ul>
+        </div>
+        <div class="payment-methods">
+          <h3 class="heading-tertiary-payment">Payment Methods</h3>
+          <!-- <label>
+            <input type="radio" name="payment-method" checked />
+            <span>Cash on delivery</span>
+          </label> -->
+          <ul class="list-payment-methods">
+            <li class="list-payment-methods-item">
+              <span>Cash on delivery</span>
+            </li>
+            <p class="">Pay with cash upon delivery.</p>
+          </ul>
+        </div>
+
+        <p class="right-panel-text">
+          Your personal data will be used to process your order, support your
+          experience throughout this website, and for other purposes described
+          in our
+          <a href="../Privacy Policy/Privacy Policy.html" class="privacy-policy"
+            >privacy policy</a
+          >.
+        </p>
+
+        <button type="submit">Place Order</button>
+      </div>
+    </div>
+    <footer class="footer"></footer>
+
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/trigger.js"></script>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

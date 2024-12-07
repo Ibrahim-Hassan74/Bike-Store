@@ -4,7 +4,7 @@
 }
 
 .register-box {
-  color: #000;
+  color: #555;
   max-width: 600px;
   margin: var(--sp-6) auto;
   box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.05);
@@ -17,7 +17,7 @@
   margin-bottom: 3.2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  color: #000;
+  color: #555;
 }
 
 #form {

@@ -6,7 +6,7 @@ if (currentFileName === 'updateId.html') {
     e.preventDefault();
     const modelId = document.getElementById('id');
     const updatedModel = {
-      Id: modelId.value,
+      product_id: modelId.value,
     };
     // console.log(checkRequired([modelId]));
     try {
@@ -22,9 +22,8 @@ if (currentFileName === 'updateId.html') {
     }
   });
 } else if (currentFileName === 'updateModel.html') {
-  document.getElementById('name').value = sessionStorage.getItem('name') || '';
-  document.getElementById('image').value =
-    sessionStorage.getItem('image') || '';
+  document.getElementById('name').value =
+    sessionStorage.getItem('product_name') || '';
   document.getElementById('old-price').value =
     sessionStorage.getItem('old_price') || '';
   document.getElementById('new-price').value =
@@ -34,7 +33,7 @@ if (currentFileName === 'updateId.html') {
   document.getElementById('details').value =
     sessionStorage.getItem('details') || '';
   document.getElementById('category').value =
-    sessionStorage.getItem('category') || '';
+    sessionStorage.getItem('catagory') || '';
   updateForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('name');
@@ -45,6 +44,7 @@ if (currentFileName === 'updateId.html') {
     const details = document.getElementById('details');
     const category = document.getElementById('category');
     const data = new FormData(updateForm);
+    data.append('product_id', sessionStorage.getItem('product_id'));
     try {
       if (
         checkRequired([
@@ -56,13 +56,15 @@ if (currentFileName === 'updateId.html') {
           category,
         ])
       ) {
-        const response = await axios.post(udateModelUrl, data);
+        const response = await axios.post(updatedModelUrl, data);
+        // console.log(data.get('new_price'));
         alert('Model updated successfully');
-        for (const key in response.data) sessionStorage.removeItem(key);
+        console.log(response);
+        for (const key in sessionStorage) sessionStorage.removeItem(key);
         window.location.href = 'updateId.html';
       }
     } catch (e) {
-      alert('Error updating model');
+      // alert('Error updating model');
       console.log('Error: ', e.message);
     }
   });
@@ -71,7 +73,7 @@ if (currentFileName === 'updateId.html') {
     e.preventDefault();
     const modelId = document.getElementById('id').value;
     const deleteId = {
-      Id: modelId,
+      product_id: modelId,
     };
     try {
       if (checkRequired([modelId])) {
