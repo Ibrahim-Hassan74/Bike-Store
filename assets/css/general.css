@@ -58,262 +58,275 @@ Medium: 11px
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  --primary-color: #000;
-  --secondary-color: #545454;
-  --text-color1: #333;
-  --text-color2: #f4f4f4;
-  --background-color: #fff;
+    --primary-color: #000;
+    --secondary-color: #545454;
+    --text-color1: #333;
+    --text-color2: #f4f4f4;
+    --background-color: #fff;
 }
 
 :root {
-  /* Font sizes */
-  --fs-1: 10px;
-  --fs-2: 12px;
-  --fs-3: 14px;
-  --fs-4: 16px;
-  --fs-5: 18px;
-  --fs-6: 20px;
-  --fs-7: 24px;
-  --fs-8: 30px;
-  --fs-9: 36px;
-  --fs-10: 44px;
-  --fs-11: 52px;
-  --fs-12: 62px;
-  --fs-13: 74px;
-  --fs-14: 86px;
-  --fs-15: 98px;
-  /* Spacing system */
-  --sp-1: 2px;
-  --sp-2: 4px;
-  --sp-3: 8px;
-  --sp-4: 12px;
-  --sp-5: 16px;
-  --sp-6: 24px;
-  --sp-7: 32px;
-  --sp-8: 48px;
-  --sp-9: 64px;
-  --sp-10: 80px;
-  --sp-11: 96px;
-  --sp-12: 128px;
-  /* font-size: 10px; */
-  /* 10px / 16px = 0.625 = 62.5% */
-  /* Percentage of user's browser font-size setting */
-  font-size: 62.5%;
-  /* main color*/
+    /* Font sizes */
+    --fs-1: 10px;
+    --fs-2: 12px;
+    --fs-3: 14px;
+    --fs-4: 16px;
+    --fs-5: 18px;
+    --fs-6: 20px;
+    --fs-7: 24px;
+    --fs-8: 30px;
+    --fs-9: 36px;
+    --fs-10: 44px;
+    --fs-11: 52px;
+    --fs-12: 62px;
+    --fs-13: 74px;
+    --fs-14: 86px;
+    --fs-15: 98px;
+    /* Spacing system */
+    --sp-1: 2px;
+    --sp-2: 4px;
+    --sp-3: 8px;
+    --sp-4: 12px;
+    --sp-5: 16px;
+    --sp-6: 24px;
+    --sp-7: 32px;
+    --sp-8: 48px;
+    --sp-9: 64px;
+    --sp-10: 80px;
+    --sp-11: 96px;
+    --sp-12: 128px;
+    /* font-size: 10px; */
+    /* 10px / 16px = 0.625 = 62.5% */
+    /* Percentage of user's browser font-size setting */
+    font-size: 62.5%;
+    /* main color*/
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
-  line-height: 1;
-  font-weight: 500;
-  color: #eee;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1;
+    font-weight: 500;
+    color: #eee;
 }
 
 .container {
-  max-width: 120rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
 }
 
 .bgimg-style {
-  position: relative;
-  background-size: cover;
-  height: 100vh;
+    position: relative;
+    background-size: cover;
+    height: 100vh;
 }
 
 *:focus {
-  outline: none;
+    outline: none;
 }
 
 .grid {
-  display: grid;
-  column-gap: 6.4rem;
-  row-gap: 9.6rem;
-  /* margin-bottom: 9.6rem; */
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+    /* margin-bottom: 9.6rem; */
 }
+
 
 /* .gird:last-child {
   margin-bottom: 0;
 } */
 
 .grid:not(:last-child) {
-  margin-bottom: 9.6rem;
+    margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .grid--5-cols {
-  grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .grid--center-v {
-  align-items: center;
+    align-items: center;
 }
 
 .subheading {
-  display: block;
-  font-size: 1.6rem;
-  /* font-weight: 500; */
-  text-transform: uppercase;
-  margin-bottom: 1.6rem;
-  letter-spacing: 1.6px;
+    display: block;
+    font-size: 1.6rem;
+    /* font-weight: 500; */
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 1.6px;
 }
 
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
-  font-weight: 700;
-  /* color: #45260a; */
-  /* color: #343a40; */
-  letter-spacing: -0.5px;
+    font-weight: 700;
+    /* color: #45260a; */
+    /* color: #343a40; */
+    letter-spacing: -0.5px;
 }
 
 .heading-primary {
-  font-size: 3rem;
-  line-height: 1.05;
-  margin-bottom: 3.2rem;
+    font-size: 3rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
 }
 
 .heading-secondary {
-  font-size: 4.4rem;
-  line-height: 1.2;
-  margin-bottom: 2.4rem;
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 2.4rem;
 }
 
 .heading-tertiary {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 3.2rem;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
 }
 
 .btn--form {
-  background-color: #45260a;
-  color: #fdf2e9;
-  align-self: end;
-  padding: 1.2rem;
+    background-color: #45260a;
+    color: #fdf2e9;
+    align-self: end;
+    padding: 1.2rem;
 }
 
 .btn--form:hover {
-  background-color: #fff;
-  color: #555;
+    background-color: #fff;
+    color: #555;
 }
 
 .btn,
 .btn:link,
 .btn:visited {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-  /* Only necessary for .btn */
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  /* Put transition on original "state" */
-  /* transition: background-color 0.3s; */
-  transition: all 0.5s;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.6rem 3.2rem;
+    border-radius: 9px;
+    /* Only necessary for .btn */
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    /* Put transition on original "state" */
+    /* transition: background-color 0.3s; */
+    transition: all 0.5s;
 }
 
 .btn--full:link,
 .btn--full:visited {
-  background-color: #fff;
-  color: #444;
+    background-color: #fff;
+    color: #444;
 }
 
 .btn--full:hover,
 .btn--full:active {
-  background-color: #999;
-  color: #fff;
+    background-color: #999;
+    color: #fff;
 }
 
 .btn--outline:link,
 .btn--outline:visited {
-  background-color: #fff;
-  color: #555;
+    background-color: #fff;
+    color: #555;
 }
 
 .btn--outline:hover,
 .btn--outline:active {
-  background-color: #fdf2e9;
-  /* border: 3px solid #fff; */
-  /* Trick to add border inside */
-  box-shadow: inset 0 0 0 3px #fff;
+    background-color: #fdf2e9;
+    /* border: 3px solid #fff; */
+    /* Trick to add border inside */
+    box-shadow: inset 0 0 0 3px #fff;
 }
 
 .margin-right-sm {
-  margin-right: 1.6rem !important;
+    margin-right: 1.6rem !important;
 }
+
 
 /* login styles */
 
 .login-description {
-  font-size: var(--fs-4);
-  line-height: 1.6;
-  margin-bottom: var(--sp-7);
-  color: #666;
+    font-size: var(--fs-4);
+    line-height: 1.6;
+    margin-bottom: var(--sp-7);
+    color: #666;
 }
 
 .input-container {
-  position: relative;
-  margin-bottom: var(--sp-7);
+    position: relative;
+    margin-bottom: var(--sp-7);
 }
 
 .input-container label {
-  position: absolute;
-  top: -10px;
-  left: 12px;
-  background-color: #fff;
-  padding: 0 var(--sp-3);
-  font-size: 14px;
-  color: #777;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background-color: #fff;
+    padding: 0 var(--sp-3);
+    font-size: 14px;
+    color: #777;
 }
 
 .input-container input {
-  width: 100%;
-  padding: var(--sp-4);
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+    width: 100%;
+    padding: var(--sp-4);
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.input-container textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: var(--sp-4);
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
 }
 
 .input-container *:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, 0.06);
+    outline: none;
+    box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, 0.06);
 }
 
 .login-button {
-  width: 100%;
-  padding: var(--sp-4);
-  font-size: var(--fs-4);
-  font-weight: 700;
-  color: #fff;
-  background-color: #000;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.5s;
+    width: 100%;
+    padding: var(--sp-4);
+    font-size: var(--fs-4);
+    font-weight: 700;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
 .login-button:hover {
-  background-color: var(--secondary-color);
-  transform: scale(1.01);
+    background-color: var(--secondary-color);
+    transform: scale(1.01);
 }
