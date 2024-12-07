@@ -311,3 +311,14 @@ header {
 .footer-link:active {
   color: #777;
 }
+
+/*  */
+
+.secondary-header-image {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.7),
+      rgba(34, 34, 34, 0.7)
+    ),
+    url('../img/bike-hero.jpg');
+}

@@ -71,13 +71,13 @@ if (currentFileName === 'updateId.html') {
 } else if (currentFileName === 'deleteModel.html') {
   deleteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const modelId = document.getElementById('id').value;
+    const modelId = document.getElementById('id');
     const deleteId = {
-      product_id: modelId,
+      product_id: modelId.value,
     };
     try {
       if (checkRequired([modelId])) {
-        const response = await axios.delete(deleteModelUrl, deleteId);
+        const response = await axios.post(deleteModelUrl, deleteId);
         alert('Successfully deleted model');
         window.location.href = 'deleteModel.html';
       }
