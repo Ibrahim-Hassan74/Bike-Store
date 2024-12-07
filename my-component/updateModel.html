@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="../assets/css/general.css" />
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/login.css" />
-    <link rel="stylesheet" href="../assets/css/queries.css" />
     <link rel="stylesheet" href="../assets/css/register.css" />
     <script src="../assets/js/lib.js" defer></script>
     <title>Add model</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="main-nav-container grid"></nav>
+      <nav class="main-nav-container grid"></nav>
     </header>
     <div class="container form-box--1">
-        <h1 class="heading-primary">Update Bike</h1>
+      <h1 class="heading-primary">Update Bike</h1>
 
-        <form class="add-form">
+      <form class="update-form">
+        <div class="input-container">
+          <label for="category">Category</label>
+          <input type="text" id="category" name="category" />
+          <small>Error message</small>
+        </div>
+        <div class="input-container">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+          <small>Error message</small>
+        </div>
 
-            <div class="input-container">
-                <label for="category">Category</label>
-                <input type="text" id="category" name="category" />
-            </div>
-            <div class="input-container">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" />
-            </div>
-            <div class="input-container">
-                <label for="image">Image Path</label>
-                <input type="text" id="image" name="image" />
-            </div>
-            <div class="input-container price">
-                <label for="old-price">Old Price</label>
-                <input type="text" id="old-price" name="oldprice" />
-            </div>
-            <div class="input-container price">
-                <label for="new-price">New Price</label>
-                <input type="text" id="new-price" name="newprice" />
-            </div>
+        <div class="input-container price">
+          <label for="old-price">Old Price</label>
+          <input type="text" id="old-price" name="oldprice" />
+          <small>Error message</small>
+        </div>
+        <div class="input-container price">
+          <label for="new-price">New Price</label>
+          <input type="text" id="new-price" name="newprice" />
+          <small>Error message</small>
+        </div>
 
-            <div class="input-container">
-                <label for="description ">Description </label>
-                <input type="text" id="description " name="description " />
-            </div>
-            <div class="input-container details">
-                <label for="details">Details</label>
-                <textarea name="details" id="details"></textarea>
-            </div>
+        <div class="input-container">
+          <label for="description">Description </label>
+          <input type="text" id="description" name="description " />
+          <small>Error message</small>
+        </div>
+        <div class="input-container details">
+          <label for="details">Details</label>
+          <textarea name="details" id="details"></textarea>
+          <small>Error message</small>
+        </div>
+        <div class="image-container">
+          <label for="image">Image Path</label>
+          <input type="file" id="image" name="image" />
+        </div>
 
-            <button type="submit" class="login-button">Update</button>
-
-        </form>
+        <button type="submit" class="login-button">Update</button>
+      </form>
     </div>
     <footer class="footer"></footer>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/vendor.js"></script>
     <script src="../assets/js/trigger.js"></script>
-    <script src="../assets/js/form/login.js"></script>
-
-
-</body>
-
+    <script src="../assets/js/crud.js"></script>
+  </body>
 </html>

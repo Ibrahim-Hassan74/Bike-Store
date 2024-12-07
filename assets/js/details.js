@@ -22,7 +22,7 @@ function create() {
           </div>
           <a href="#" class="btn-cart">Add to cart</a>
           <p class="description">
-            ${sessionStorage.getItem('cardText')}}
+            ${sessionStorage.getItem('cardText')}
           </p>
         </div>
     `;
