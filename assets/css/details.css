@@ -1,94 +1,100 @@
 .container {
-  margin: var(--sp-10) auto;
+    margin: var(--sp-10) auto;
 }
 
 .img-box {
-  width: 100%;
-  height: 550px;
-  border-radius: 10px;
-  overflow: hidden;
+    width: 100%;
+    height: 550px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .img-box img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  transition: all 0.5s;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
 }
 
 .img-box img:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .content {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .name-bike {
-  font-size: var(--fs-9);
-  margin-bottom: var(--sp-7);
+    font-size: var(--fs-9);
+    margin-bottom: var(--sp-7);
 }
 
 .price-bike {
-  font-size: var(--fs-8);
+    font-size: var(--fs-8);
 }
 
 .degree-bike {
-  font-size: var(--fs-7);
-  margin: var(--sp-8) 0;
-  color: var(--secondary-color);
-  line-height: 1.5;
-  font-weight: 350;
+    font-size: var(--fs-7);
+    margin: var(--sp-8) 0;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    font-weight: 350;
 }
 
 .quantity-box {
-  font-size: var(--fs-5);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--fs-8);
+    font-size: var(--fs-5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--fs-8);
 }
 
 #quantity {
-  font-size: var(--fs-5);
-  display: block;
-  width: 80%;
-  border-radius: 12px;
-  border-color: #000;
-  padding: var(--sp-3);
-  transition: all 0.5;
+    font-size: var(--fs-5);
+    display: block;
+    width: 80%;
+    border-radius: 12px;
+    border-color: #000;
+    padding: var(--sp-3);
+    transition: all 0.5;
 }
 
 #quantity:focus {
-  border-color: #6b6b6b;
-  box-shadow: 0 0 0 0.5rem #fdeee980;
+    border-color: #6b6b6b;
+    box-shadow: 0 0 0 0.5rem #fdeee980;
 }
 
+.btn-cart,
 .content a:link,
 .content a:visited {
-  text-decoration: none;
-  color: #f4f4f4;
-  display: block;
-  padding: var(--sp-4);
-  margin: var(--sp-5) 0;
-  text-align: center;
-  font-size: var(--fs-6);
-  background-color: var(--primary-color);
-  border-radius: 12px;
-  transition: all 0.5s;
+    text-decoration: none;
+    color: #f4f4f4;
+    display: block;
+    padding: var(--sp-4);
+    margin: var(--sp-5) 0;
+    text-align: center;
+    font-size: var(--fs-6);
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    transition: all 0.5s;
 }
 
+.btn-cart:hover,
 .content a:hover,
 .content a:active {
-  background-color: var(--secondary-color);
-  transform: scale(1.02);
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.btn-cart {
+    width: 100%;
 }
 
 .description {
-  font-size: var(--fs-5);
-  line-height: 1.6;
-  font-weight: 350;
-  color: var(--secondary-color);
+    font-size: var(--fs-5);
+    line-height: 1.6;
+    font-weight: 350;
+    color: var(--secondary-color);
 }
