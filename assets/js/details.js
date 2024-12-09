@@ -43,8 +43,10 @@ function create() {
         }
         console.log(data);
         try {
-            const response = axios.post(addcart, data);
-            alert('The bike has been added to the cart successfully');
+            const response = axios.post(addcart, data, {
+                withCredentials: true
+            });
+            alert(`${quantity.value} bike has been added to the cart successfully`);
             console.log(response);
         } catch (error) {
             console.log('Error:', error.message);
