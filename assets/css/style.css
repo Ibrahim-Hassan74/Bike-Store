@@ -1,7 +1,5 @@
 /* ******************************** */
-
 /* NAV SECTION */
-
 /* ******************************** */
 
 header {
@@ -55,6 +53,10 @@ header {
   display: flex;
   align-items: center;
   gap: 2.4rem;
+}
+
+.nav-icon-item {
+  cursor: pointer;
 }
 
 .logo {
@@ -440,4 +442,50 @@ header {
       rgba(34, 34, 34, 0.7)
     ),
     url('../img/bike-hero.jpg');
+}
+
+/* ******************************* */
+/* ADMIN PANEL */
+/* ******************************* */
+
+.admin-panel {
+  background-color: #ddd;
+  border-right: 2px solid rgba(200, 200, 200, 0.1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+.show-admin-panel {
+  transform: translateX(0);
+}
+
+.admin-panel ul {
+  margin-top: 2px;
+  list-style: none;
+}
+
+.admin-panel ul li {
+  border-bottom: 2px solid rgba(100, 100, 100, 0.1);
+  padding: 20px;
+}
+
+.admin-panel ul li:first-of-type {
+  border-top: 2px solid rgba(100, 100, 100, 0.1);
+}
+
+.admin-panel ul li a {
+  font-size: 1.8rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.admin-panel ul li a:hover {
+  font-weight: 700;
+  color: #555;
 }

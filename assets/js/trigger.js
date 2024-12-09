@@ -11,6 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
     'login.html',
     '../assets/img/logo-img.png',
   ];
+  const adminPanelLinks = [
+    'addModel.html',
+    'updateId.html',
+    'deleteModel.html',
+  ];
   console.log(currentFileName);
   if (currentFileName === 'index.html') {
     // pinNavBar();
@@ -19,7 +24,31 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i < links.length - 1; i++) {
       links[i] = 'my-component/' + links[i];
     }
+    for (let i = 0; i < adminPanelLinks.length; i++) {
+      adminPanelLinks[i] = 'my-component/' + adminPanelLinks[i];
+    }
   }
+  //#region admin panel links
+
+  let component = `<div class="admin-panel"> 
+                <ul>
+                  <li><a href=${adminPanelLinks[0]}>Add Model</a></li>
+                  <li><a href=${adminPanelLinks[1]}>Update Model</a></li>
+                  <li><a href=${adminPanelLinks[2]}>Delete Model</a></li>
+                </ul>
+              </div>`;
+
+  // if (document.cookie.contains('isAdmin=true')) {
+  //   component = `<div class="admin-panel">
+  //               <ul>
+  //                 <li><a href="#">Add Model</a></li>
+  //                 <li><a href="#">Update Model</a></li>
+  //                 <li><a href="#">Delete Model</a></li>
+  //               </ul>
+  //             </div>`;
+  // }
+
+  //#endregion
 
   mainNav.innerHTML = `
             <div class="nav-logo">
@@ -27,6 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
                   <img src="${links[6]}" alt="this is the logo navgation image" class="logo" />
               </a>
             </div>
+
             <div class="nav-link">
                 <ul class="list-links">
                     <li class="list-item"><a href="${links[0]}">Home</a></li>
@@ -36,15 +66,41 @@ window.addEventListener('DOMContentLoaded', () => {
                     <li class="list-item"><a href="${links[4]}">About</a></li>
                 </ul>
             </div>
-            <div class="nav-icon">
-                <a href="${links[5]}">
+            <div>
+              <div class="nav-icon">
+                  <a href="${links[5]}">
                     <ion-icon name="person"></ion-icon>
-                </a>
-                <a href="#">
-                    <ion-icon name="bag"></ion-icon>
-                </a>
+                  </a>
+                  <a href="#"> 
+                    <ion-icon class="nav-icon-item" name="bag"></ion-icon>
+                  </a>
+                  <a>
+                    <ion-icon class="nav-icon-item admin-panel-show-section" name="ellipsis-vertical"></ion-icon>
+                  </a>
+              </div>
+              ${component}
             </div>
   `;
+  //#region  for admin component
+
+  const admin = document.querySelector('.admin-panel-show-section');
+  const adminPanel = document.querySelector('.admin-panel');
+  admin.addEventListener('click', (event) => {
+    event.stopPropagation();
+    adminPanel.classList.toggle('show-admin-panel');
+  });
+
+  window.addEventListener('click', () => {
+    if (adminPanel.classList.contains('show-admin-panel')) {
+      adminPanel.classList.remove('show-admin-panel');
+    }
+  });
+
+  adminPanel.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+  //#endregion
+
   // add nav footer to all component in my components
   footer.innerHTML = `
   <div class="container grid grid--footer">
@@ -133,25 +189,25 @@ window.addEventListener('DOMContentLoaded', () => {
   year.innerHTML = new Date().getFullYear();
 });
 
-// function pinNavBar() {
-//   const sectionEl = document.querySelector('.black-bike-box-2');
-//   const obs = new IntersectionObserver(
-//     (entries) => {
-//       const ent = entries[0];
-//       console.log(ent);
+function pinNavBar() {
+  const sectionEl = document.querySelector('.mountain-container');
+  const obs = new IntersectionObserver(
+    (entries) => {
+      const ent = entries[0];
+      console.log(ent);
 
-//       // if (!ent.isIntersecting) {
-//       //   document.querySelector('.main-nav-container').id = 'main-nav-headler';
-//       // }
-//       if (ent.isIntersecting) {
-//         document.querySelector('.main-nav-container').id = '';
-//       }
-//     },
-//     {
-//       root: null,
-//       threshold: 0,
-//       rootMargin: '-700px',
-//     }
-//   );
-//   obs.observe(sectionEl);
-// }
+      if (!ent.isIntersecting) {
+        document.querySelector('.main-nav-container').id = 'main-nav-headler';
+      }
+      if (ent.isIntersecting) {
+        document.querySelector('.main-nav-container').id = '';
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: '-700px',
+    }
+  );
+  obs.observe(sectionEl);
+}
