@@ -23,3 +23,4 @@ const addModelUrl = '';
 const udateModelIdUrl = '';
 const updatedModelUrl = '';
 const deleteModelUrl = '';
+const addcart = '';
