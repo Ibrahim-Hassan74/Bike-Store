@@ -85,3 +85,73 @@ function checkPasswordsMatch(input1, input2) {
 function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
+
+function isTokenExpired(token) {
+  try {
+    const state = JSON.parse(atob(token.split('.')[1]));
+    // console.log(state.exp * 1000 < Date.now());
+    return state.exp * 1000 < Date.now();
+  } catch (e) {
+    return true;
+  }
+}
+
+async function refreshAccessToken() {
+  try {
+    const response = await axios.post(
+      refreshTokenUrl,
+      {},
+      {
+        withCredentials: true,
+      }
+    );
+    const { accessToken } = response.data;
+    localStorage.setItem('accessToken', accessToken);
+    return accessToken;
+  } catch (error) {
+    console.log('Failed to refresh token:', error.message);
+    return null;
+  }
+}
+
+// const axios = require('axios');
+
+// const instant = axios.create();
+
+axios.interceptors.request.use(
+  async (resolve) => {
+    let accessToken = localStorage.getItem('accessToken');
+
+    if (window.location.pathname.includes('login.html')) {
+      return resolve;
+    }
+
+    if (!accessToken || isTokenExpired(accessToken)) {
+      accessToken = await refreshAccessToken();
+      if (!accessToken) {
+        if (!window.location.pathname.includes('login.html')) {
+          window.location.href = 'my-component/login.html';
+        }
+        throw new Error('Authorization failed');
+      }
+    }
+
+    resolve.headers.Authorization = `Bearer ${accessToken}`;
+    return resolve;
+  },
+  (reject) => {
+    return Promise.reject(reject);
+  }
+);
+
+axios.interceptors.response.use(
+  (resolve) => resolve,
+  async (reject) => {
+    if (reject.response && reject.response.status === 401) {
+      if (!window.location.pathname.includes('login.html')) {
+        window.location.href = '/my-component/login.html';
+      }
+    }
+    return Promise.reject(reject);
+  }
+);

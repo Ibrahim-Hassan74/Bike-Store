@@ -1,55 +1,99 @@
-window.addEventListener('DOMContentLoaded', () => {
-  // add nav bar to all component in my components
+// window.addEventListener('DOMContentLoaded', () => {
+// add nav bar to all component in my components
 
-  const currentFileName = window.location.pathname.split('/').pop();
-  let links = [
-    '../index.html',
-    'accessories.html',
-    'mountain.html',
-    'electric.html',
-    'about.html',
-    'login.html',
-    '../assets/img/logo-img.png',
-  ];
-  const adminPanelLinks = [
-    'addModel.html',
-    'updateId.html',
-    'deleteModel.html',
-  ];
-  console.log(currentFileName);
-  if (currentFileName === 'index.html') {
-    // pinNavBar();
-    links[0] = 'index.html';
-    links[6] = 'assets/img/logo-img.png';
-    for (let i = 1; i < links.length - 1; i++) {
-      links[i] = 'my-component/' + links[i];
-    }
-    for (let i = 0; i < adminPanelLinks.length; i++) {
-      adminPanelLinks[i] = 'my-component/' + adminPanelLinks[i];
-    }
+const currentFileName =
+  window.location.pathname.split('/').pop() || 'index.html';
+let links = [
+  '../index.html',
+  'accessories.html',
+  'mountain.html',
+  'electric.html',
+  'about.html',
+  'login.html',
+  '../assets/img/logo-img.png',
+];
+const adminPanelLinks = ['addModel.html', 'updateId.html', 'deleteModel.html'];
+
+if (currentFileName === 'index.html') {
+  links[0] = 'index.html';
+  links[6] = 'assets/img/logo-img.png';
+  for (let i = 1; i < links.length - 1; i++) {
+    links[i] = 'my-component/' + links[i];
   }
-  //#region admin panel links
+  for (let i = 0; i < adminPanelLinks.length; i++) {
+    adminPanelLinks[i] = 'my-component/' + adminPanelLinks[i];
+  }
+}
+//#region admin panel links
+let component = ``;
+let navIcon = `<a href="${links[5]}">
+                    <ion-icon name="log-in" class="nav-bar-icon"></ion-icon>
+                  </a>
+                  `;
+const token = localStorage.getItem('accessToken');
 
-  let component = `<div class="admin-panel"> 
+if (token && !isTokenExpired(token)) {
+  // console.log(JSON.parse(atob(token.split('.')[1])));
+  navIcon = `<a href="#"> <ion-icon class="nav-icon-item" name="bag"></ion-icon></a>
+              <a><ion-icon class="nav-icon-item admin-panel-show-section" name="ellipsis-vertical"></ion-icon></a>
+              `;
+  component = `<div class="admin-panel"> 
                 <ul>
-                  <li><a href=${adminPanelLinks[0]}>Add Model</a></li>
-                  <li><a href=${adminPanelLinks[1]}>Update Model</a></li>
-                  <li><a href=${adminPanelLinks[2]}>Delete Model</a></li>
+                <li class="admin-list-item">
+                    <ion-icon class="admin-list-icon" name="person"></ion-icon>
+                    <span>
+                      <a href="#">Profile</a>
+                    </span>
+                    </li>
+                  <li class="admin-list-item">
+                    <ion-icon class="admin-list-icon" name="add-circle"></ion-icon>
+                    <span> 
+                      <a href=${adminPanelLinks[0]}>Add Model</a>
+                    </span>
+                  </li>
+                  <li class="admin-list-item">
+                    <ion-icon class="admin-list-icon" name="create"></ion-icon>
+                    <span> 
+                      <a href=${adminPanelLinks[1]}>Update Model</a>
+                    </span>
+                  </li>
+                  <li class="admin-list-item">
+                  <ion-icon class="admin-list-icon" name="trash"></ion-icon>
+                  <span> 
+                      <a href=${adminPanelLinks[2]}>Delete Model</a>
+                    </span>
+                  </li>
+                  <li class="admin-list-item">
+                    <ion-icon class="admin-list-icon" name="log-out"></ion-icon>
+                    <span>
+                      <a id="log-out">Logout</a>
+                    </span>
+                  </li>
                 </ul>
               </div>`;
+} else {
+  if (token) localStorage.removeItem('accessToken');
+}
 
-  // if (document.cookie.contains('isAdmin=true')) {
-  //   component = `<div class="admin-panel">
-  //               <ul>
-  //                 <li><a href="#">Add Model</a></li>
-  //                 <li><a href="#">Update Model</a></li>
-  //                 <li><a href="#">Delete Model</a></li>
-  //               </ul>
-  //             </div>`;
-  // }
+// if (document.cookie.contains('isAdmin=true')) {
+//   component = `<div class="admin-panel">
+//               <ul>
+//                 <li><a href="#">Add Model</a></li>
+//                 <li><a href="#">Update Model</a></li>
+//                 <li><a href="#">Delete Model</a></li>
+//               </ul>
+//             </div>`;
+// }
 
-  //#endregion
+//#endregion
 
+//#region  for admin component
+
+//#endregion
+
+// });
+
+(function addNavBar() {
   mainNav.innerHTML = `
             <div class="nav-logo">
               <a href="${links[0]}">
@@ -68,39 +112,39 @@ window.addEventListener('DOMContentLoaded', () => {
             </div>
             <div>
               <div class="nav-icon">
-                  <a href="${links[5]}">
-                    <ion-icon name="person"></ion-icon>
-                  </a>
-                  <a href="#"> 
-                    <ion-icon class="nav-icon-item" name="bag"></ion-icon>
-                  </a>
-                  <a>
-                    <ion-icon class="nav-icon-item admin-panel-show-section" name="ellipsis-vertical"></ion-icon>
-                  </a>
+                  ${navIcon}
               </div>
               ${component}
             </div>
   `;
-  //#region  for admin component
 
-  const admin = document.querySelector('.admin-panel-show-section');
-  const adminPanel = document.querySelector('.admin-panel');
-  admin.addEventListener('click', (event) => {
-    event.stopPropagation();
-    adminPanel.classList.toggle('show-admin-panel');
-  });
+  if (token && !isTokenExpired(token)) {
+    const admin = document.querySelector('.admin-panel-show-section');
+    const adminPanel = document.querySelector('.admin-panel');
+    admin.addEventListener('click', (event) => {
+      event.stopPropagation();
+      adminPanel.classList.toggle('show-admin-panel');
+    });
 
-  window.addEventListener('click', () => {
-    if (adminPanel.classList.contains('show-admin-panel')) {
-      adminPanel.classList.remove('show-admin-panel');
-    }
-  });
+    window.addEventListener('click', () => {
+      if (adminPanel.classList.contains('show-admin-panel')) {
+        adminPanel.classList.remove('show-admin-panel');
+      }
+    });
 
-  adminPanel.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
-  //#endregion
+    adminPanel.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+    const logOut = document.getElementById('log-out');
+    console.log(logOut);
+    logOut.addEventListener('click', () => {
+      localStorage.removeItem('accessToken');
+      window.location.href = 'my-component/login.html';
+    });
+  }
+})();
 
+(function addFooter() {
   // add nav footer to all component in my components
   footer.innerHTML = `
   <div class="container grid grid--footer">
@@ -108,8 +152,8 @@ window.addEventListener('DOMContentLoaded', () => {
           <a href="#" class="footer-logo">
             <img
               class="logo"
-              alt="Omnifood logo"
-              src="../assets/img/logo-img.png"
+              alt="bike store logo"
+              src="${links[6]}"
             />
           </a>
 
@@ -187,27 +231,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const year = footer.querySelector('.year');
   year.innerHTML = new Date().getFullYear();
-});
+})();
 
-function pinNavBar() {
-  const sectionEl = document.querySelector('.mountain-container');
-  const obs = new IntersectionObserver(
-    (entries) => {
-      const ent = entries[0];
-      console.log(ent);
+// function pinNavBar() {
+//   const sectionEl = document.querySelector('.mountain-container');
+//   const obs = new IntersectionObserver(
+//     (entries) => {
+//       const ent = entries[0];
+//       console.log(ent);
 
-      if (!ent.isIntersecting) {
-        document.querySelector('.main-nav-container').id = 'main-nav-headler';
-      }
-      if (ent.isIntersecting) {
-        document.querySelector('.main-nav-container').id = '';
-      }
-    },
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: '-700px',
-    }
-  );
-  obs.observe(sectionEl);
-}
+//       if (!ent.isIntersecting) {
+//         document.querySelector('.main-nav-container').id = 'main-nav-headler';
+//       }
+//       if (ent.isIntersecting) {
+//         document.querySelector('.main-nav-container').id = '';
+//       }
+//     },
+//     {
+//       root: null,
+//       threshold: 0,
+//       rootMargin: '-700px',
+//     }
+//   );
+//   obs.observe(sectionEl);
+// }

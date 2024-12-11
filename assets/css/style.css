@@ -13,6 +13,9 @@ header {
   background: transparent;
 }
 
+.nav-bar-icon {
+  font-size: 2.4rem;
+}
 .electric-bike {
   padding: var(--sp-7) var(--sp-11) var(--sp-11) var(--sp-11);
   display: grid;
@@ -449,7 +452,7 @@ header {
 /* ******************************* */
 
 .admin-panel {
-  background-color: #ddd;
+  background-color: #fff;
   border-right: 2px solid rgba(200, 200, 200, 0.1);
   position: fixed;
   top: 0;
@@ -458,6 +461,7 @@ header {
   height: 100vh;
   z-index: 100;
   transform: translateX(100%);
+  box-shadow: 0 -1.2rem 4.8rem rgba(0, 0, 0, 0.05);
   transition: transform 0.5s ease;
 }
 
@@ -479,13 +483,48 @@ header {
   border-top: 2px solid rgba(100, 100, 100, 0.1);
 }
 
+.admin-panel ul li {
+  font-size: 1.8rem;
+  color: #333;
+  transition: background-color 0.5s ease;
+}
+
 .admin-panel ul li a {
   font-size: 1.8rem;
   color: #333;
   text-decoration: none;
+  /* transition: background-color 0.5s ease; */
 }
 
-.admin-panel ul li a:hover {
+.admin-panel ul li:hover {
   font-weight: 700;
+  background-color: #eee;
   color: #555;
+  cursor: pointer;
 }
+
+.admin-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-list-icon {
+  color: #555;
+  font-size: 2rem;
+}
+
+/* .feedback {
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  transform: translateX(33%);
+}
+
+.feedback-btn {
+  border: none;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transform: rotate(90deg);
+} */
