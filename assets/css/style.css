@@ -514,7 +514,11 @@ header {
   font-size: 2rem;
 }
 
-/* .feedback {
+/* ********************************** */
+/* Feedback */
+/* ********************************** */
+
+.feedback {
   position: fixed;
   bottom: 10%;
   right: 0;
@@ -527,4 +531,4 @@ header {
   font-size: 1.8rem;
   cursor: pointer;
   transform: rotate(90deg);
-} */
+}

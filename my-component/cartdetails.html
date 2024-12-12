@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="../assets/css/general.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/cartdetails.css" />
+    <link rel="stylesheet" href="../assets/css/queries.css" />
+
+    <title>Cart Details</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="main-nav-container grid"></nav>
+    </header>
+    <section class="cart-details">
+      <div class="container cart-container">
+        <table class="cart-table">
+          <tr class="header-table">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>Electric Cruiser 200</td>
+            <td>$974.99</td>
+            <td>1</td>
+            <td>$974.99</td>
+            <td class="delete">
+              <ion-icon name="trash"></ion-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Electric Cruiser 200</td>
+            <td>$974.99</td>
+            <td>2</td>
+            <td>$1800.99</td>
+            <td class="delete">
+              <ion-icon name="trash"></ion-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Electric Cruiser 200</td>
+            <td>$100</td>
+            <td>3</td>
+            <td>$300</td>
+            <td class="delete">
+              <ion-icon name="trash"></ion-icon>
+            </td>
+          </tr>
+        </table>
+        <div class="btn-check">
+          <a href="checkout.html" class="login-button">Check out</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer"></footer>
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/trigger.js"></script>
+    <script src="../assets/js/addCard.js"></script>
+  </body>
+</html>
