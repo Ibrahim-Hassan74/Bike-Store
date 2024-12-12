@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frame Pages</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .frame-container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        iframe {
+            flex: 1;
+            border: none;
+            overflow: hidden;
+            scrollbar-width: none;
+        }
+        
+        iframe::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame-container">
+        <iframe src="login.html" title="Page 1"></iframe>
+        <iframe src="register.html" title="Page 2"></iframe>
+    </div>
+</body>
+
+</html>
