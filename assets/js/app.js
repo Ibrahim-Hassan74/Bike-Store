@@ -130,7 +130,7 @@ axios.interceptors.request.use(
       accessToken = await refreshAccessToken();
       if (!accessToken) {
         if (!window.location.pathname.includes('login.html')) {
-          window.location.href = 'my-component/login.html';
+          window.location.href = 'login.html';
         }
         throw new Error('Authorization failed');
       }
@@ -149,7 +149,7 @@ axios.interceptors.response.use(
   async (reject) => {
     if (reject.response && reject.response.status === 401) {
       if (!window.location.pathname.includes('login.html')) {
-        window.location.href = '/my-component/login.html';
+        window.location.href = 'login.html';
       }
     }
     return Promise.reject(reject);

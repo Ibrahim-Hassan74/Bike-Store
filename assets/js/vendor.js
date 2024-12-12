@@ -38,4 +38,4 @@ const deleteModelUrl =
   'http://localhost/Bike-store/src/AdminPanel/DeleteProduct.php';
 const addcart = '';
 
-const refreshTokenUrl = '';
+const refreshTokenUrl = 'http://localhost/bike-store/src/auth/RefreshToken.php';
