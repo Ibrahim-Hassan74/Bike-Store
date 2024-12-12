@@ -40,6 +40,7 @@
     let data = {
       name_bike: sessionStorage.getItem('cardTitle'),
       quantity: quantity.value,
+      token: localStorage.getItem('accountToken'),
     };
     console.log(data);
     try {

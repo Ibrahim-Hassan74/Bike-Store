@@ -12,9 +12,12 @@ let links = [
   'login.html',
   '../assets/img/logo-img.png',
 ];
+let cart = 'cartdetails.html';
+
 const adminPanelLinks = ['addModel.html', 'updateId.html', 'deleteModel.html'];
 
 if (currentFileName === 'index.html') {
+  cart = 'my-component/' + cart;
   links[0] = 'index.html';
   links[6] = 'assets/img/logo-img.png';
   for (let i = 1; i < links.length - 1; i++) {
@@ -34,7 +37,7 @@ const token = localStorage.getItem('accessToken');
 
 if (token && !isTokenExpired(token)) {
   // console.log(JSON.parse(atob(token.split('.')[1])));
-  navIcon = `<a href="#"> <ion-icon class="nav-icon-item" name="bag"></ion-icon></a>
+  navIcon = `<a href="${cart}"> <ion-icon class="nav-icon-item" name="bag"></ion-icon></a>
               <a><ion-icon class="nav-icon-item admin-panel-show-section" name="ellipsis-vertical"></ion-icon></a>
               `;
   component = `<div class="admin-panel"> 
@@ -72,7 +75,9 @@ if (token && !isTokenExpired(token)) {
                 </ul>
               </div>`;
 } else {
-  if (token) localStorage.removeItem('accessToken');
+  if (token) {
+    localStorage.removeItem('accessToken');
+  }
 }
 
 // if (document.cookie.contains('isAdmin=true')) {
@@ -136,10 +141,10 @@ if (token && !isTokenExpired(token)) {
       event.stopPropagation();
     });
     const logOut = document.getElementById('log-out');
-    console.log(logOut);
+    // console.log(logOut);
     logOut.addEventListener('click', () => {
       localStorage.removeItem('accessToken');
-      window.location.href = 'my-component/login.html';
+      window.location.href = links[5];
     });
   }
 })();

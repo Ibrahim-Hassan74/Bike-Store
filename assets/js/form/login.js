@@ -9,6 +9,7 @@ formLogin.addEventListener('submit', async function(event) {
     };
     // const formData = new FormData(formLogin);
 
+
     try {
         const ok = [
             checkRequired([email, password]),
@@ -17,7 +18,9 @@ formLogin.addEventListener('submit', async function(event) {
         ];
         // console.log(ok);
         if (!ok.includes(false)) {
-            const response = await axios.post(loginUrl, data);
+            const response = await axios.post(loginUrl, data, {
+                withCredentials: true,
+            });
             localStorage.setItem('accessToken', response.data['access_token']);
             window.location.href = '../index.html';
             console.log(response);
