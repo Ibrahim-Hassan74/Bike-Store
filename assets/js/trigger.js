@@ -69,17 +69,14 @@ if (token && !isTokenExpired(token)) {
         }
       );
       const accessToken = response.data['access_token'];
-      // console.log(accessToken);
+      console.log(accessToken);
       localStorage.setItem('accessToken', accessToken);
       // console.log(response);
       // if (!response && !window.location.pathname.includes('login.html')) {
       //   // window.location.href = links[5];
       // } else localStorage.setItem('accessToken', response.access_token);
     } catch (error) {
-      console.error('Error refreshing access token:', error);
-      if (!window.location.pathname.includes('login.html')) {
-        window.location.href = links[5];
-      }
+      console.log('Error refreshing access token:', error);
     }
   })();
 }
@@ -150,10 +147,22 @@ if (token && !isTokenExpired(token)) {
     });
     const logOut = document.getElementById('log-out');
     // console.log(logOut);
-    logOut.addEventListener('click', () => {
-      localStorage.removeItem('accessToken');
+    logOut.addEventListener('click', async () => {
       // window.location.href = links[5];
-      window.location.href = currentFileName;
+      try {
+        const response = await axios.post(
+          logoutUrl,
+          {},
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(response);
+        localStorage.removeItem('accessToken');
+        window.location.href = currentFileName;
+      } catch (e) {
+        console.log(e.message);
+      }
     });
   }
 })();
