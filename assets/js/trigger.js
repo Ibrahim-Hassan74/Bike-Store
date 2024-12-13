@@ -1,21 +1,6 @@
 // window.addEventListener('DOMContentLoaded', () => {
 // add nav bar to all component in my components
 
-const currentFileName =
-  window.location.pathname.split('/').pop() || 'index.html';
-let links = [
-  '../index.html',
-  'accessories.html',
-  'mountain.html',
-  'electric.html',
-  'about.html',
-  'login.html',
-  '../assets/img/logo-img.png',
-];
-let cart = 'cartdetails.html';
-
-const adminPanelLinks = ['addModel.html', 'updateId.html', 'deleteModel.html'];
-
 if (currentFileName === 'index.html') {
   cart = 'my-component/' + cart;
   links[0] = 'index.html';
@@ -33,7 +18,6 @@ let navIcon = `<a href="${links[5]}">
                     <ion-icon name="log-in" class="nav-bar-icon"></ion-icon>
                   </a>
                   `;
-const token = localStorage.getItem('accessToken');
 
 if (token && !isTokenExpired(token)) {
   // console.log(JSON.parse(atob(token.split('.')[1])));
@@ -74,11 +58,35 @@ if (token && !isTokenExpired(token)) {
                   </li>
                 </ul>
               </div>`;
-} else {
-  if (token) {
-    localStorage.removeItem('accessToken');
-  }
+} else if (token && isTokenExpired(token)) {
+  (async function handleToken() {
+    try {
+      const response = await axios.post(
+        refreshTokenUrl,
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+      const accessToken = response.data['access_token'];
+      // console.log(accessToken);
+      localStorage.setItem('accessToken', accessToken);
+      // console.log(response);
+      // if (!response && !window.location.pathname.includes('login.html')) {
+      //   // window.location.href = links[5];
+      // } else localStorage.setItem('accessToken', response.access_token);
+    } catch (error) {
+      console.error('Error refreshing access token:', error);
+      if (!window.location.pathname.includes('login.html')) {
+        window.location.href = links[5];
+      }
+    }
+  })();
 }
+// else {
+//   if (!window.location.pathname.includes('login.html'))
+//     window.location.href = links[5];
+// }
 
 // if (document.cookie.contains('isAdmin=true')) {
 //   component = `<div class="admin-panel">
@@ -144,7 +152,8 @@ if (token && !isTokenExpired(token)) {
     // console.log(logOut);
     logOut.addEventListener('click', () => {
       localStorage.removeItem('accessToken');
-      window.location.href = links[5];
+      // window.location.href = links[5];
+      window.location.href = currentFileName;
     });
   }
 })();

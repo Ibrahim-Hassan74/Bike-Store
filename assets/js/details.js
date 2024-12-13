@@ -37,20 +37,23 @@
   });
   const btn = document.querySelector('.btn-cart');
   btn.addEventListener('click', (e) => {
-    let data = {
-      name_bike: sessionStorage.getItem('cardTitle'),
-      quantity: quantity.value,
-      token: localStorage.getItem('accountToken'),
-    };
-    console.log(data);
-    try {
-      const response = axios.post(addcart, data, {
-        withCredentials: true,
-      });
-      alert(`${quantity.value} bike has been added to the cart successfully`);
-      console.log(response);
-    } catch (error) {
-      console.log('Error:', error.message);
+    if (!token && isTokenExpired(token)) {
+      window.location.href = links[5];
+    } else {
+      const data = {
+        product_id: sessionStorage.getItem('productId'),
+        quantity: quantity.value,
+        token: localStorage.getItem('accountToken'),
+      };
+      try {
+        const response = axios.post(addcart, data, {
+          withCredentials: true,
+        });
+        console.log(response);
+        alert(`${quantity.value} bike has been added to the cart successfully`);
+      } catch (error) {
+        console.log('Error:', error.message);
+      }
     }
   });
 })();

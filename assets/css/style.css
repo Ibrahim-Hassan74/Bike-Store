@@ -255,6 +255,13 @@ header {
   color: #000;
 }
 
+#product_id,
+.product_id {
+  font-size: 1.6rem;
+  /* color: #444; */
+  display: none;
+}
+
 .text-title h1 {
   font-size: var(--fs-10);
   font-weight: 700;
@@ -274,6 +281,10 @@ header {
   display: flex;
   gap: var(--sp-7);
 }
+
+/* .Id-bike {
+  display: none;
+} */
 
 /*******************************/
 /* testimonial */

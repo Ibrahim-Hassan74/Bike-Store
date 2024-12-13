@@ -7,8 +7,10 @@ cards.forEach((card) => {
     const cardDescription =
       clickedCard.querySelector('.card-description').innerHTML;
     const cardText = clickedCard.querySelector('.card-text').innerHTML;
-
+    const productId = clickedCard.querySelector('#product_id').innerHTML;
     // console.log('Clicked Card Details:');
+    console.log(productId);
+    sessionStorage.setItem('productId', productId);
     sessionStorage.setItem('imageUrl', imageUrl);
     sessionStorage.setItem('cardTitle', cardTitle);
     sessionStorage.setItem('cardPrice', cardPrice);
