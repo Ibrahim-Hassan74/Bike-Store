@@ -39,3 +39,19 @@ const deleteModelUrl =
 const addcart = '';
 
 const refreshTokenUrl = 'http://localhost/bike-store/src/auth/RefreshToken.php';
+
+const currentFileName =
+  window.location.pathname.split('/').pop() || 'index.html';
+let links = [
+  '../index.html',
+  'accessories.html',
+  'mountain.html',
+  'electric.html',
+  'about.html',
+  'login.html',
+  '../assets/img/logo-img.png',
+];
+let cart = 'cartdetails.html';
+
+const adminPanelLinks = ['addModel.html', 'updateId.html', 'deleteModel.html'];
+const token = localStorage.getItem('accessToken');
