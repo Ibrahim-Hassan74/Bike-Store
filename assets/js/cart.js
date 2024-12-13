@@ -20,8 +20,8 @@ function addEventToDeletebuttons() {
       const cartItem = document.createElement('tr');
       cartItem.innerHTML = `
           <td>${item['product_name']}</td>
-          <td>${item['quantity']}</td>
           <td>${item['new_price']}</td>
+          <td>${item['quantity']}</td>
           <td>${item['new_price']}</td>
           <td class="delete">
               <ion-icon class="delete-btn" name="trash"></ion-icon>
