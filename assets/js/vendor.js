@@ -57,3 +57,5 @@ const adminPanelLinks = ['addModel.html', 'updateId.html', 'deleteModel.html'];
 const token = localStorage.getItem('accessToken');
 const logoutUrl = '';
 const cartDetailsUrl = '';
+const deleteCartItemUrl = '';
+const getDataUrl = '';

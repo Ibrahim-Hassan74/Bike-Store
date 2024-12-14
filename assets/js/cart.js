@@ -1,8 +1,22 @@
 function addEventToDeletebuttons() {
   const deleteButtons = document.querySelectorAll('.delete-btn');
   deleteButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.target.parentElement.parentElement.remove();
+    button.addEventListener('click', async (event) => {
+      const deleteFromCart = event.target.parentElement.parentElement;
+      try {
+        const response = await axios.post(
+          deleteCartItemUrl,
+          {
+            cart_item_id: deleteFromCart.querySelector('.cart-item-id'),
+          },
+          {
+            withCredentials: true,
+          }
+        );
+        event.target.parentElement.parentElement.remove();
+      } catch (error) {
+        console.log('Error:', error.message);
+      }
     });
   });
 }
@@ -11,18 +25,21 @@ function addEventToDeletebuttons() {
   try {
     const response = await axios.post(
       cartDetailsUrl,
-      {},
+      {
+        token: localStorage.getItem('accessToken'),
+      },
       {
         withCredentials: true,
       }
     );
-    for (const item of response.data) {
+    for (const item of response.data.cart_items) {
       const cartItem = document.createElement('tr');
       cartItem.innerHTML = `
+          <td class="cart-item-id">${item['cart_item_id']}</td>
           <td>${item['product_name']}</td>
           <td>${item['new_price']}</td>
           <td>${item['quantity']}</td>
-          <td>${item['new_price']}</td>
+          <td>${parseInt(item['new_price']) * parseInt(item['quantity'])}</td>
           <td class="delete">
               <ion-icon class="delete-btn" name="trash"></ion-icon>
           </td>

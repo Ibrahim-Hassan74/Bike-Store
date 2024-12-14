@@ -45,3 +45,7 @@
   margin: var(--sp-7) auto;
   text-align: center;
 }
+
+.cart-item-id {
+  display: none;
+}
