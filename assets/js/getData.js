@@ -3,54 +3,54 @@ let value = '';
 if (currentFileName === 'accessories.html') {
   name = 'accessories';
   value = '.container';
-} else if (currentFileName === 'mountain') {
+} else if (currentFileName === 'mountain.html') {
   name = 'mountain';
   value = '.electric-bike';
 } else {
   name = 'electric';
+  value = '.electric-bike'; // Set a default value for 'electric'
 }
 
 (async function getdetailsOfItems() {
   try {
-    const response = await axios.get(getDataUrl, {
-      headers: {
-        category: name,
-      },
-    });
-    // console.log(response);
+    const response = await axios.get(`${getDataUrl}?category=${name}`);
+    console.log(response);
     const data = response.data.products;
-    for (const key in data) {
-      const item = document.createElement('div');
-      item.classList.add('card');
-      item.innerHTML = `
+    for (const item of response.data.products) {  // Change this to iterate over the array items
+      const cardElement = document.createElement('div');
+      cardElement.classList.add('card');
+      cardElement.innerHTML = `
       <div class="card-image">
-          <img src="${key['image']}" alt="electric bike" />
+          <img src="${item.image}" alt="bike" />
         </div>
         <div class="card-content">
-          <p id="product_id">${key['product_id']}</p>
+          <p id="product_id">${item.product_id}</p>
           <ul class="card-list">
             <li class="card-name">
               <ion-icon name="bicycle-outline" class="card-icon"></ion-icon>
-              <h3 class="card-title">${key['product_name']}</h3>
+              <h3 class="card-title">${item.product_name}</h3>
             </li>
           </ul>
           <div class="card-price">
-            <span>${key['new_price']}</span>
+            <span>${item.new_price}</span>
           </div>
-          <p class="card-description">${key['description']}</p>
+          <p class="card-description">${item.description}</p>
           <p class="card-text">
-            ${key['details']}
+            ${item.details}
           </p>
           <a href="#">Add to cart</a>
         </div>
       `;
-      document.querySelector(value).appendChild(item);
+      if (document.querySelector(value)) {
+        document.querySelector(value).appendChild(cardElement);
+      } else {
+        console.error(`Element with selector '${value}' not found`);
+      }
     }
   } catch (e) {
     console.log('Error:', e.message);
   }
 })();
-
 /* 
 
                 "product_id" => $result['product_id'],
