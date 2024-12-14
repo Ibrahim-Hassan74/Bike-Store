@@ -9,7 +9,6 @@ const phoneNumber = document.getElementById('phone');
 const button = document.getElementById('submit--btn');
 const footer = document.querySelector('.footer');
 const details = document.getElementById('main-details');
-const cards = document.querySelectorAll('.card');
 const addForm = document.querySelector('.add-form');
 const updateFormId = document.querySelector('.update-form-id');
 const updateForm = document.querySelector('.update-form');
