@@ -16,7 +16,8 @@ if (currentFileName === 'accessories.html') {
     const response = await axios.get(`${getDataUrl}?category=${name}`);
     console.log(response);
     const data = response.data.products;
-    for (const item of response.data.products) {  // Change this to iterate over the array items
+    for (const item of response.data.products) {
+      // Change this to iterate over the array items
       const cardElement = document.createElement('div');
       cardElement.classList.add('card');
       cardElement.innerHTML = `
@@ -43,6 +44,25 @@ if (currentFileName === 'accessories.html') {
       `;
       if (document.querySelector(value)) {
         document.querySelector(value).appendChild(cardElement);
+        cardElement.addEventListener('click', () => {
+          const imageUrl = cardElement.querySelector('.card-image img').src;
+          const cardTitle = cardElement.querySelector('.card-title').innerHTML;
+          const cardPrice =
+            cardElement.querySelector('.card-price span').innerHTML;
+          const cardDescription =
+            cardElement.querySelector('.card-description').innerHTML;
+          const cardText = cardElement.querySelector('.card-text').innerHTML;
+          const productId = cardElement.querySelector('#product_id').innerHTML;
+
+          console.log(productId);
+          sessionStorage.setItem('productId', productId);
+          sessionStorage.setItem('imageUrl', imageUrl);
+          sessionStorage.setItem('cardTitle', cardTitle);
+          sessionStorage.setItem('cardPrice', cardPrice);
+          sessionStorage.setItem('cardDescription', cardDescription);
+          sessionStorage.setItem('cardText', cardText);
+          window.location.href = 'details.html';
+        });
       } else {
         console.error(`Element with selector '${value}' not found`);
       }
