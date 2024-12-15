@@ -43,7 +43,7 @@
       const data = {
         product_id: sessionStorage.getItem('productId'),
         quantity: quantity.value,
-        token: localStorage.getItem('accountToken'),
+        token: localStorage.getItem('accessToken'),
       };
       try {
         const response = axios.post(addcart, data, {

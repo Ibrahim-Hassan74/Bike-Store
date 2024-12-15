@@ -7,7 +7,8 @@ function addEventToDeletebuttons() {
         const response = await axios.post(
           deleteCartItemUrl,
           {
-            cart_item_id: deleteFromCart.querySelector('.cart-item-id'),
+            cart_item_id:
+              +deleteFromCart.querySelector('.cart-item-id').textContect,
           },
           {
             withCredentials: true,

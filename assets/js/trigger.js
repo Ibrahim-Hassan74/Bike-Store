@@ -24,15 +24,10 @@ if (token && !isTokenExpired(token)) {
   navIcon = `<a href="${cart}"> <ion-icon class="nav-icon-item" name="bag"></ion-icon></a>
               <a><ion-icon class="nav-icon-item admin-panel-show-section" name="ellipsis-vertical"></ion-icon></a>
               `;
-  component = `<div class="admin-panel"> 
-                <ul>
-                <li class="admin-list-item">
-                    <ion-icon class="admin-list-icon" name="person"></ion-icon>
-                    <span>
-                      <a href="#">Profile</a>
-                    </span>
-                    </li>
-                  <li class="admin-list-item">
+  let admin = '';
+  const curr = JSON.parse(atob(token.split('.')[1]));
+  if (curr.data['is_admin']) {
+    admin = `<li class="admin-list-item">
                     <ion-icon class="admin-list-icon" name="add-circle"></ion-icon>
                     <span> 
                       <a href=${adminPanelLinks[0]}>Add Model</a>
@@ -49,7 +44,17 @@ if (token && !isTokenExpired(token)) {
                   <span> 
                       <a href=${adminPanelLinks[2]}>Delete Model</a>
                     </span>
-                  </li>
+                  </li>`;
+  }
+  component = `<div class="admin-panel"> 
+                <ul>
+                <li class="admin-list-item">
+                    <ion-icon class="admin-list-icon" name="person"></ion-icon>
+                    <span>
+                      <a href="#">Profile</a>
+                    </span>
+                </li>
+                    ${admin}
                   <li class="admin-list-item">
                     <ion-icon class="admin-list-icon" name="log-out"></ion-icon>
                     <span>
