@@ -33,7 +33,21 @@ function addEventToDeletebuttons() {
         withCredentials: true,
       }
     );
+    const table = document.createElement('table');
+    table.classList.add('cart-table');
+    const tableHeader = document.createElement('tr');
+    tableHeader.classList.add('header-table');
+    tableHeader.innerHTML = `
+            <th class="cart-item-id">Cart ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th></th>`;
+    table.appendChild(tableHeader);
+    let ok = false;
     for (const item of response.data.cart_items) {
+      ok = true;
       const cartItem = document.createElement('tr');
       cartItem.innerHTML = `
           <td class="cart-item-id">${item['cart_item_id']}</td>
@@ -45,9 +59,22 @@ function addEventToDeletebuttons() {
               <ion-icon class="delete-btn" name="trash"></ion-icon>
           </td>
         `;
-      document.querySelector('.cart-table').appendChild(cartItem);
+      table.appendChild(cartItem);
     }
-    addEventToDeletebuttons();
+    if (ok) {
+      document.querySelector('.cart-container').appendChild(table);
+      document.querySelector(
+        '.cart-container'
+      ).innerHTML += `<div class="btn-check">
+          <a href="checkout.html" class="login-button">Check out</a>
+        </div>`;
+      addEventToDeletebuttons();
+    } else {
+      const emptyCart = document.createElement('p');
+      emptyCart.textContent = 'Your cart is empty.';
+      emptyCart.classList.add('empty-cart');
+      document.querySelector('.cart-container').appendChild(emptyCart);
+    }
   } catch (err) {
     console.log(err.message);
   }

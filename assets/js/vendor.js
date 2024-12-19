@@ -55,6 +55,7 @@ let cart = 'cartdetails.html';
 const adminPanelLinks = ['addModel.html', 'updateId.html', 'deleteModel.html'];
 const token = localStorage.getItem('accessToken');
 const logoutUrl = '';
-const cartDetailsUrl = '';
+const cartDetailsUrl =
+  'http://localhost/bike-store/src/Orders/removeFromCart.php';
 const deleteCartItemUrl = '';
 const getDataUrl = '';

@@ -76,6 +76,7 @@ if (token && !isTokenExpired(token)) {
       const accessToken = response.data['access_token'];
       console.log(accessToken);
       localStorage.setItem('accessToken', accessToken);
+      window.location.reload();
       // console.log(response);
       // if (!response && !window.location.pathname.includes('login.html')) {
       //   // window.location.href = links[5];
@@ -115,7 +116,6 @@ if (token && !isTokenExpired(token)) {
                   <img src="${links[6]}" alt="this is the logo navgation image" class="logo" />
               </a>
             </div>
-
             <div class="nav-link">
                 <ul class="list-links">
                     <li class="list-item"><a href="${links[0]}">Home</a></li>

@@ -33,7 +33,7 @@ if (currentFileName === 'accessories.html') {
             </li>
           </ul>
           <div class="card-price">
-            <span>${item.new_price}</span>
+            <span>$${item.new_price}</span>
           </div>
           <p class="card-description">${item.description}</p>
           <p class="card-text">

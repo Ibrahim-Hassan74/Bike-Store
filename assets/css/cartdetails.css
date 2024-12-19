@@ -49,3 +49,11 @@
 .cart-item-id {
   display: none;
 }
+
+.empty-cart {
+  text-align: center;
+  margin-bottom: var(--sp-11);
+  font-weight: 700;
+  font-size: 6.4rem;
+  color: #555;
+}
