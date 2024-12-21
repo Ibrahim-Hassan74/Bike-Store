@@ -16,6 +16,7 @@ if (currentFileName === 'accessories.html') {
     const response = await axios.get(`${getDataUrl}?category=${name}`);
     console.log(response);
     const data = response.data.products;
+    let index = 0;
     for (const item of response.data.products) {
       // Change this to iterate over the array items
       const cardElement = document.createElement('div');
@@ -39,7 +40,7 @@ if (currentFileName === 'accessories.html') {
           <p class="card-text">
             ${item.details}
           </p>
-          <a href="#">Add to cart</a>
+          <a class="add-to-cart-btn" href="#">Add to cart</a>
         </div>
       `;
       if (document.querySelector(value)) {
@@ -62,6 +63,30 @@ if (currentFileName === 'accessories.html') {
           sessionStorage.setItem('cardDescription', cardDescription);
           sessionStorage.setItem('cardText', cardText);
           window.location.href = 'details.html';
+        });
+        const cartButton =
+          document.querySelectorAll('.add-to-cart-btn')[index++];
+        cartButton.addEventListener('click', async (event) => {
+          event.stopPropagation();
+          event.preventDefault();
+          if (!token && isTokenExpired(token)) {
+            window.location.href = links[5];
+          } else {
+            const data = {
+              product_id: item.product_id,
+              quantity: 1,
+              token: localStorage.getItem('accessToken'),
+            };
+            try {
+              const response = axios.post(addcart, data, {
+                withCredentials: true,
+              });
+              console.log(response);
+              alert(`${1} Model has been added to the cart successfully`);
+            } catch (error) {
+              console.log('Error:', error.message);
+            }
+          }
         });
       } else {
         console.error(`Element with selector '${value}' not found`);
