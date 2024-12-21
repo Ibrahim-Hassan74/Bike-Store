@@ -39,6 +39,7 @@ let footerLinks = [
   'about.html',
   'Privacy Policy.html',
   'login.html',
+  'feedback.html',
 ];
 let profile = 'profile_detalis.html';
 let cart = 'cartdetails.html';
@@ -70,3 +71,4 @@ const getDataUrl =
   'http://localhost/bike-store/src/ProductsMangment/Retrieve.php';
 
 const profileUrl = '';
+const feedbackUrl = '';

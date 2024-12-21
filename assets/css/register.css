@@ -84,10 +84,12 @@
   visibility: visible;
 }
 
-.input-container.success input {
+.input-container.success input,
+.input-container.success textarea {
   border-color: var(--success-color);
 }
 
-.input-container.error input {
+.input-container.error input,
+.input-container.error textarea {
   border-color: var(--error-color);
 }

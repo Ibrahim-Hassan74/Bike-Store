@@ -247,7 +247,7 @@ if (token && !isTokenExpired(token)) {
             <li><a class="footer-link" href="${footerLinks[1]}">About Bike Store</a></li>
             <li><a class="footer-link" href="#">For Business</a></li>
             <li><a class="footer-link" href="#">Bike Buddies</a></li>
-            <li><a class="footer-link" href="#">Careers</a></li>
+            <li><a class="footer-link" href="${footerLinks[4]}">Feedback</a></li>
           </ul>
         </nav>
 

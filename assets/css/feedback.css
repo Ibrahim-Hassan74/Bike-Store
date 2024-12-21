@@ -1,0 +1,44 @@
+.feedback {
+  max-width: 90rem;
+  margin-bottom: 4.8rem;
+}
+.feedback-header {
+  font-size: 4.8rem;
+  color: #555;
+  margin-bottom: 2.4rem;
+  margin-top: 3.2rem;
+}
+
+.feedback-description {
+  font-size: 3.2rem;
+  color: #777;
+  margin-bottom: 4.8rem;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  font-size: 3.2rem;
+  gap: 5px;
+  margin-bottom: 2.4rem;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: lightgray;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}
+
+.star-rating input:checked ~ label {
+  color: gold;
+}

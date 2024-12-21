@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../assets/js/lib.js"></script>
+    <link rel="icon" href="../assets/img/bike-icon.png" />
+    <link rel="apple-touch-icon" href="../assets/img/bike-icon.png" />
+    <link rel="stylesheet" href="../assets/css/profile.css" />
+    <link rel="stylesheet" href="../assets/css/general.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/register.css" />
+    <link rel="stylesheet" href="../assets/css/login.css" />
+    <link rel="stylesheet" href="../assets/css/feedback.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav-container grid"></nav>
+    </header>
+    <div class="container feedback">
+      <h1 class="feedback-header">Feedback</h1>
+      <p class="feedback-description">Tell us what you think of our service</p>
+      <form class="form-container">
+        <div class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5">★</label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4">★</label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3">★</label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2">★</label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1">★</label>
+        </div>
+        <div class="input-container">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+          <small>Error message</small>
+        </div>
+        <div class="input-container">
+          <label for="interest">Your Personal Interest</label>
+          <input type="text" id="interest" name="interest" />
+          <small>Error message</small>
+        </div>
+
+        <div class="input-container">
+          <label for="Comment">Comment</label>
+          <textarea id="Comment" rows="5" cols="30"></textarea>
+          <small>Error message</small>
+        </div>
+        <button type="submit" class="login-button">Submit</button>
+      </form>
+    </div>
+    <footer class="footer"></footer>
+    <script src="../assets/js/lib.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/trigger.js"></script>
+    <script src="../assets/js/feedback.js"></script>
+  </body>
+</html>
