@@ -1,0 +1,33 @@
+.profile {
+  max-width: 120rem;
+  width: 90rem;
+}
+.saved-button {
+  padding: var(--sp-4);
+  font-size: var(--fs-4);
+  font-weight: 700;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-bottom: 4.8rem;
+}
+
+.saved-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.01);
+}
+.heading-tertiary-profile {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  margin-top: 3.2rem;
+  color: #555;
+}
+.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+}

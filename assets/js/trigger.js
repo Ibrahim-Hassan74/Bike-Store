@@ -2,6 +2,7 @@
 // add nav bar to all component in my components
 
 if (currentFileName === 'index.html') {
+  profile = 'my-component/' + profile;
   cart = 'my-component/' + cart;
   links[0] = 'index.html';
   links[6] = 'assets/img/logo-img.png';
@@ -11,7 +12,11 @@ if (currentFileName === 'index.html') {
   for (let i = 0; i < adminPanelLinks.length; i++) {
     adminPanelLinks[i] = 'my-component/' + adminPanelLinks[i];
   }
+  for (let i = 0; i < footerLinks.length; i++) {
+    footerLinks[i] = 'my-component/' + footerLinks[i];
+  }
 }
+
 //#region admin panel links
 let component = ``;
 let navIcon = `<a href="${links[5]}">
@@ -51,7 +56,7 @@ if (token && !isTokenExpired(token)) {
                 <li class="admin-list-item">
                     <ion-icon class="admin-list-icon" name="person"></ion-icon>
                     <span>
-                      <a href="#">Profile</a>
+                      <a href="${profile}">Profile</a>
                     </span>
                 </li>
                     ${admin}
@@ -63,7 +68,7 @@ if (token && !isTokenExpired(token)) {
                   </li>
                 </ul>
               </div>`;
-} else if (token && isTokenExpired(token)) {
+} else if (token && isTokenExpired(token) && Cookies['refresh_token']) {
   (async function handleToken() {
     try {
       const response = await axios.post(
@@ -76,7 +81,7 @@ if (token && !isTokenExpired(token)) {
       const accessToken = response.data['access_token'];
       console.log(accessToken);
       localStorage.setItem('accessToken', accessToken);
-      window.location.reload();
+      if (localStorage.getItem('accessToken')) window.location.reload();
       // console.log(response);
       // if (!response && !window.location.pathname.includes('login.html')) {
       //   // window.location.href = links[5];
@@ -164,7 +169,8 @@ if (token && !isTokenExpired(token)) {
         );
         console.log(response);
         localStorage.removeItem('accessToken');
-        window.location.href = currentFileName;
+        if (currentFileName === profile) window.location.href = links[0];
+        else window.location.href = currentFileName;
       } catch (e) {
         console.log(e.message);
       }
@@ -218,7 +224,7 @@ if (token && !isTokenExpired(token)) {
             <p>
               <a class="footer-link" href="tel:415-201-6370">111-222-333</a
               ><br />
-              <a class="footer-link" href="mailto:hello@omnifood.com"
+              <a class="footer-link" href="mailto:bikestore@gmail.com"
                 >bikestore@gmail.com</a
               >
             </p>
@@ -228,8 +234,8 @@ if (token && !isTokenExpired(token)) {
         <nav class="nav-col">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">Create account</a></li>
-            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="${footerLinks[0]}">Create account</a></li>
+            <li><a class="footer-link" href="${footerLinks[3]}">Sign in</a></li>
             <li><a class="footer-link" href="#">iOS app</a></li>
             <li><a class="footer-link" href="#">Android app</a></li>
           </ul>
@@ -238,7 +244,7 @@ if (token && !isTokenExpired(token)) {
         <nav class="nav-col">
           <p class="footer-heading">Company</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">About Bike Store</a></li>
+            <li><a class="footer-link" href="${footerLinks[1]}">About Bike Store</a></li>
             <li><a class="footer-link" href="#">For Business</a></li>
             <li><a class="footer-link" href="#">Bike Buddies</a></li>
             <li><a class="footer-link" href="#">Careers</a></li>
@@ -250,7 +256,7 @@ if (token && !isTokenExpired(token)) {
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Cycling Guide </a></li>
             <li><a class="footer-link" href="#">Help center</a></li>
-            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+            <li><a class="footer-link" href="${footerLinks[2]}">Privacy & terms</a></li>
           </ul>
         </nav>
       </div>

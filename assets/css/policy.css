@@ -1,22 +1,23 @@
-body {
-    font-family: 'Rubik', sans-serif;
-    line-height: 1;
-    font-weight: 500;
-  }
-.container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #fff;
- 
+.privacy {
+  /* max-width: 800px; */
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
 }
-h1 ,h2 {
-    color: #000;
+.privacy h1,
+.privacy h2 {
+  color: #555;
+  font-size: 3.2rem;
+  line-height: 1.2;
 }
-p {
-    margin: 10px 0;
+.privacy p {
+  margin: 1.6rem 0;
+  font-size: 2.4rem;
+  color: #777;
+  line-height: 1.6;
+  letter-spacing: 0.9px;
 }
-h1{
-    margin-bottom: 100px;
-    font-size: 60px;
+.privacy h1 {
+  margin-bottom: 4.8rem;
+  font-size: 60px;
 }

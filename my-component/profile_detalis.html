@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../assets/js/lib.js"></script>
+    <link rel="icon" href="../assets/img/bike-icon.png" />
+    <link rel="apple-touch-icon" href="../assets/img/bike-icon.png" />
+    <link rel="stylesheet" href="../assets/css/profile.css" />
+    <link rel="stylesheet" href="../assets/css/general.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/register.css" />
+
+    <title>Profile</title>
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav-container grid"></nav>
+    </header>
+    <div class="container profile">
+      <h2 class="heading-tertiary-profile">Account Details</h2>
+      <form id="profile-form">
+        <div class="name">
+          <div class="input-container">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+            <small>Error message</small>
+          </div>
+          <div class="input-container">
+            <label for="last-name">last Name</label>
+            <input type="text" id="last-name" />
+            <small>Error message</small>
+          </div>
+        </div>
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+          <small>Error message</small>
+        </div>
+
+        <div class="input-container">
+          <label for="current-password">Current password </label>
+          <input type="password" id="Password" />
+          <small>Error message</small>
+        </div>
+        <div class="input-container">
+          <label for="new-password">New password</label>
+          <input type="password" id="new-Password" />
+          <small>Error message</small>
+        </div>
+        <div class="input-container">
+          <label for="confirm-new-password">Confirm new password</label>
+          <input type="password" id="confirm-new-Password" />
+          <small>Error message</small>
+        </div>
+        <button type="submit" class="saved-button">Save Changes</button>
+      </form>
+    </div>
+    <footer class="footer"></footer>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/trigger.js"></script>
+    <script src="../assets/js/profile.js"></script>
+  </body>
+</html>

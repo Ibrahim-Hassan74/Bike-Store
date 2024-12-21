@@ -2,19 +2,27 @@ function addEventToDeletebuttons() {
   const deleteButtons = document.querySelectorAll('.delete-btn');
   deleteButtons.forEach((button) => {
     button.addEventListener('click', async (event) => {
+      const cnt = document.querySelectorAll('.delete-btn');
       const deleteFromCart = event.target.parentElement.parentElement;
       try {
         const response = await axios.post(
           deleteCartItemUrl,
           {
             cart_item_id:
-              +deleteFromCart.querySelector('.cart-item-id').textContect,
+              +deleteFromCart.querySelector('.cart-item-id').textContent,
           },
           {
             withCredentials: true,
           }
         );
         event.target.parentElement.parentElement.remove();
+        if (cnt.length === 1) {
+          const emptyCart = document.createElement('p');
+          emptyCart.textContent = 'Your cart is empty.';
+          emptyCart.classList.add('empty-cart');
+          document.querySelector('.cart-container').innerHTML = '';
+          document.querySelector('.cart-container').appendChild(emptyCart);
+        }
       } catch (error) {
         console.log('Error:', error.message);
       }
