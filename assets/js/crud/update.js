@@ -10,7 +10,7 @@
   document.getElementById('details').value =
     sessionStorage.getItem('details') || '';
   document.getElementById('category').value =
-    sessionStorage.getItem('catagory') || '';
+    sessionStorage.getItem('category') || '';
   updateForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('name');
@@ -35,13 +35,13 @@
       ) {
         const response = await axios.post(updatedModelUrl, data);
         // console.log(data.get('new_price'));
-        alert('Model updated successfully');
+        showCustomAlert('Model updated successfully');
         console.log(response);
         for (const key in sessionStorage) sessionStorage.removeItem(key);
         window.location.href = 'updateId.html';
       }
     } catch (e) {
-      // alert('Error updating model');
+      showCustomAlert('Error updating model');
       console.log('Error: ', e.message);
     }
   });

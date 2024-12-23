@@ -18,8 +18,8 @@ formLogin.addEventListener('submit', async function (event) {
     if (!ok.includes(false)) {
       const response = await axios.post(setpassUrl, data);
       console.log(response);
+      sessionStorage.removeItem('email');
       window.location.href = '/my-component/login.html';
-      // sessionStorage.removeItem('email');
     }
   } catch (error) {
     console.log('Error:', error.toJSON());

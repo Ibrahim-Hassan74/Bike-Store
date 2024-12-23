@@ -50,7 +50,9 @@
           withCredentials: true,
         });
         console.log(response);
-        alert(`${quantity.value} bike has been added to the cart successfully`);
+        showCustomAlert(
+          `${quantity.value} bike has been added to the cart successfully`
+        );
       } catch (error) {
         console.log('Error:', error.message);
       }

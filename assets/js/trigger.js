@@ -17,6 +17,26 @@ if (currentFileName === 'index.html') {
   }
 }
 
+(function createCustomeAlert() {
+  const overlay = document.createElement('div');
+  overlay.id = 'alert-overlay';
+
+  const alertBox = document.createElement('div');
+  alertBox.id = 'alert-box';
+  const alertMessage = document.createElement('div');
+  alertMessage.id = 'alert-message';
+  const alertButton = document.createElement('button');
+  alertButton.id = 'alert-close';
+  alertButton.textContent = 'Close';
+  alertButton.onclick = hideCustomAlert;
+  alertBox.appendChild(alertMessage);
+
+  alertBox.appendChild(alertButton);
+
+  overlay.appendChild(alertBox);
+
+  document.body.appendChild(overlay);
+})();
 //#region admin panel links
 let component = ``;
 let navIcon = `<a href="${links[5]}">

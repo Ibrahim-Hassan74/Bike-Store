@@ -24,11 +24,11 @@
         const response = await axios.post(addModelUrl, data);
         console.log(response);
 
-        alert('Model added successfully');
+        showCustomAlert('Model added successfully');
         // window.location.href = '/my-component/addModel.html';
       }
     } catch (e) {
-      alert('Failed to add model');
+      showCustomAlert('Failed to add model');
       console.log(e.message);
     }
   });

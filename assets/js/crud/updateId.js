@@ -14,7 +14,7 @@
         window.location.href = 'updateModel.html';
       }
     } catch (e) {
-      alert('the Model Id not found');
+      showCustomAlert('the Model Id not found');
       console.log('Error: ', e.message);
     }
   });

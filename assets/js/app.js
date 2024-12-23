@@ -2,11 +2,21 @@ async function sendHttpsRequest(data) {
   try {
     const response = await axios.post(registerUrl, data);
     console.log(response);
+    showCustomAlert('success check your email for verfication');
   } catch (error) {
+    showCustomAlert('email already registered');
+    showError(email, '');
     console.log('Error:', error.toJSON());
   }
 }
-
+/*
+firstName,
+      lastName,
+      email,
+      password,
+      password2,
+      phoneNumber,
+*/
 // Show input error message
 function showError(input, message) {
   const formControl = input.parentElement;
@@ -94,6 +104,15 @@ function isTokenExpired(token) {
   } catch (e) {
     return true;
   }
+}
+
+function showCustomAlert(message) {
+  document.getElementById('alert-message').innerText = message;
+  document.getElementById('alert-overlay').style.display = 'flex';
+}
+
+function hideCustomAlert() {
+  document.getElementById('alert-overlay').style.display = 'none';
 }
 
 // async function refreshAccessToken() {

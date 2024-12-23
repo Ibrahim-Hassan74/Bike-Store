@@ -8,11 +8,11 @@
     try {
       if (checkRequired([modelId])) {
         const response = await axios.post(deleteModelUrl, deleteId);
-        alert('Successfully deleted model');
+        showCustomAlert('Successfully deleted model');
         window.location.href = 'deleteModel.html';
       }
     } catch (e) {
-      alert('the Model Id not found');
+      showCustomAlert('the Model Id not found');
       console.log('Error: ', e.message);
     }
   });

@@ -9,12 +9,13 @@ formPass.addEventListener('submit', async function (event) {
   // const formData = new FormData(formLogin);
   try {
     if (checkEmail(email)) {
-      window.location.href = '/my-component/Verifycode.html';
       const response = await axios.post(forgotpassUrl, data);
+      window.location.href = '/my-component/Verifycode.html';
       console.log(response);
     }
     // window.open('/../../../my-component/Verifycode.html');
   } catch (error) {
+    showCustomAlert('Try again later');
     console.log('Error:', error.message);
   }
 });

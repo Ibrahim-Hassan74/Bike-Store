@@ -8,7 +8,7 @@ if (currentFileName === 'accessories.html') {
   value = '.electric-bike';
 } else {
   name = 'electric';
-  value = '.electric-bike'; // Set a default value for 'electric'
+  value = '.electric-bike';
 }
 
 (async function getdetailsOfItems() {
@@ -82,8 +82,11 @@ if (currentFileName === 'accessories.html') {
                 withCredentials: true,
               });
               console.log(response);
-              alert(`${1} Model has been added to the cart successfully`);
+              showCustomAlert(
+                `${1} Model has been added to the cart successfully`
+              );
             } catch (error) {
+              showCustomAlert('Failed to add');
               console.log('Error:', error.message);
             }
           }

@@ -46,11 +46,11 @@ frmProfile.addEventListener('submit', async function (event) {
       const response = axios.post(profileUrl, data, {
         withCredentials: true,
       });
-      alert('Profile updated successfully!');
+      showCustomAlert('Profile updated successfully!');
       location.reload();
     }
   } catch (err) {
     console.log(err.message);
-    alert('Failed to update profile');
+    showCustomAlert('Failed to update profile');
   }
 });

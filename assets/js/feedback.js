@@ -34,11 +34,11 @@ feedbackform.addEventListener('submit', async function (event) {
     const response = await axios.post(feedbackUrl, data, {
       withCredentials: true,
     });
-    alert('Feedback submitted successfully!');
+    showCustomAlert('Feedback submitted successfully!');
     setTimeout(() => {}, 30000);
     window.location.href = '../index.html';
   } catch (e) {
-    alert('Failed to submit feedback');
+    showCustomAlert('Failed to submit feedback');
     console.log('Error: ', e.message);
   }
 });
