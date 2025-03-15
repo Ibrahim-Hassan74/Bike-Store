@@ -17,7 +17,7 @@ async function handleSubmit(event) {
       }
     }
   } catch (error) {
-    showCustomAlert('Wrong OTP');
+    showCustomAlert('Error', 'Wrong OTP', 'error', 'Invalid OTP');
     showError(code, 'Invalid OTP');
     console.log('Error:', error.toJSON());
   }

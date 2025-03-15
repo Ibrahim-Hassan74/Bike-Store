@@ -2,9 +2,19 @@ async function sendHttpsRequest(data) {
   try {
     const response = await axios.post(registerUrl, data);
     console.log(response);
-    showCustomAlert('success check your email for verfication');
+    showCustomAlert(
+      'success',
+      'success check your email for verfication',
+      'success',
+      'Successfully'
+    );
   } catch (error) {
-    showCustomAlert('email already registered');
+    showCustomAlert(
+      'Error',
+      'email already registered',
+      'error',
+      'Already registered'
+    );
     showError(email, '');
     console.log('Error:', error.toJSON());
   }
@@ -106,14 +116,32 @@ function isTokenExpired(token) {
   }
 }
 
-function showCustomAlert(message) {
-  document.getElementById('alert-message').innerText = message;
-  document.getElementById('alert-overlay').style.display = 'flex';
+function showCustomAlert(
+  titleMessage,
+  textMessage,
+  iconMessage,
+  confirbuttonText
+) {
+  // document.getElementById('alert-message').innerText = message;
+  // document.getElementById('alert-overlay').style.display = 'flex';
+
+  Swal.fire({
+    title: titleMessage,
+    text: textMessage,
+    icon: iconMessage,
+    confirmButtonText: confirbuttonText,
+    customClass: {
+      popup: 'custom-swal-popup',
+      title: 'custom-swal-title',
+      content: 'custom-swal-content',
+      confirmButton: 'custom-swal-confirm-button',
+    },
+  });
 }
 
-function hideCustomAlert() {
-  document.getElementById('alert-overlay').style.display = 'none';
-}
+// function hideCustomAlert() {
+//   document.getElementById('alert-overlay').style.display = 'none';
+// }
 
 // async function refreshAccessToken() {
 //   try {

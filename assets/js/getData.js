@@ -82,11 +82,20 @@ if (currentFileName === 'accessories.html') {
                 withCredentials: true,
               });
               console.log(response);
+
               showCustomAlert(
-                `${1} Model has been added to the cart successfully`
+                'Success',
+                `${1} Model has been added to the cart successfully`,
+                'success',
+                'Sucessfully Added'
               );
             } catch (error) {
-              showCustomAlert('Failed to add');
+              showCustomAlert(
+                'Failed',
+                'Failed to add',
+                'error',
+                'Failed to Add'
+              );
               console.log('Error:', error.message);
             }
           }

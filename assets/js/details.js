@@ -51,7 +51,10 @@
         });
         console.log(response);
         showCustomAlert(
-          `${quantity.value} bike has been added to the cart successfully`
+          'Success',
+          `${quantity.value} Model has been added to the cart successfully`,
+          'success',
+          'Sucessfully Added'
         );
       } catch (error) {
         console.log('Error:', error.message);

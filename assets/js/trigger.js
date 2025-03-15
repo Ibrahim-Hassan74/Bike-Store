@@ -17,26 +17,44 @@ if (currentFileName === 'index.html') {
   }
 }
 
-(function createCustomeAlert() {
-  const overlay = document.createElement('div');
-  overlay.id = 'alert-overlay';
+// (function createCustomeAlert() {
+//   const overlay = document.createElement('div');
+//   overlay.id = 'alert-overlay';
 
-  const alertBox = document.createElement('div');
-  alertBox.id = 'alert-box';
-  const alertMessage = document.createElement('div');
-  alertMessage.id = 'alert-message';
-  const alertButton = document.createElement('button');
-  alertButton.id = 'alert-close';
-  alertButton.textContent = 'Close';
-  alertButton.onclick = hideCustomAlert;
-  alertBox.appendChild(alertMessage);
+//   const alertBox = document.createElement('div');
+//   alertBox.id = 'alert-box';
+//   const alertMessage = document.createElement('div');
+//   alertMessage.id = 'alert-message';
+//   const alertButton = document.createElement('button');
+//   alertButton.id = 'alert-close';
+//   alertButton.textContent = 'Close';
+//   alertButton.onclick = hideCustomAlert;
+//   alertBox.appendChild(alertMessage);
 
-  alertBox.appendChild(alertButton);
+//   alertBox.appendChild(alertButton);
 
-  overlay.appendChild(alertBox);
+//   overlay.appendChild(alertBox);
 
-  document.body.appendChild(overlay);
-})();
+//   document.body.appendChild(overlay);
+// })();
+
+// (function createCustomDialog() {
+//   const dialogBox = document.createElement('div');
+//   dialogBox.id = 'customDialog';
+//   dialogBox.classList.add('dialog');
+//   dialogBox.innerHTML = `
+//   <div class="dialog-content">
+//         <h3>Do you agree?</h3>
+//         <p>Do you Want to remove item from cart?</p>
+//         <div class="dialog-actions">
+//           <button id="agree">Yes</button>
+//           <button id="disagree">No</button>
+//         </div>
+//       </div>
+//   `;
+//   document.body.appendChild(dialogBox);
+// })();
+
 //#region admin panel links
 let component = ``;
 let navIcon = `<a href="${links[5]}">

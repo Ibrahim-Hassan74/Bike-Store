@@ -15,7 +15,7 @@ formPass.addEventListener('submit', async function (event) {
     }
     // window.open('/../../../my-component/Verifycode.html');
   } catch (error) {
-    showCustomAlert('Try again later');
+    showCustomAlert('Error', 'Try again later', 'error', 'Try again');
     console.log('Error:', error.message);
   }
 });

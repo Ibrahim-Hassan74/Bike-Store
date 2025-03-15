@@ -35,13 +35,25 @@
       ) {
         const response = await axios.post(updatedModelUrl, data);
         // console.log(data.get('new_price'));
-        showCustomAlert('Model updated successfully');
+        // showCustomAlert('Model updated successfully');
+        showCustomAlert(
+          'Success',
+          'Model updated successfully',
+          'success',
+          'Sucessfully updated'
+        );
         console.log(response);
         for (const key in sessionStorage) sessionStorage.removeItem(key);
         window.location.href = 'updateId.html';
       }
     } catch (e) {
-      showCustomAlert('Error updating model');
+      // showCustomAlert('Error updating model');
+      showCustomAlert(
+        'Error',
+        'Error updating model',
+        'error',
+        'Error updating model'
+      );
       console.log('Error: ', e.message);
     }
   });

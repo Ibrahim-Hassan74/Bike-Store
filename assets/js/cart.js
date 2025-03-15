@@ -1,30 +1,75 @@
+// function addEventToDeletebuttons() {
+//   const deleteButtons = document.querySelectorAll('.delete-btn');
+//   deleteButtons.forEach((button) => {
+//     button.addEventListener('click', async (event) => {
+//       const cnt = document.querySelectorAll('.delete-btn');
+//       const deleteFromCart = event.target.parentElement.parentElement;
+//       try {
+//         const response = await axios.post(
+//           deleteCartItemUrl,
+//           {
+//             cart_item_id:
+//               +deleteFromCart.querySelector('.cart-item-id').textContent,
+//           },
+//           {
+//             withCredentials: true,
+//           }
+//         );
+//         event.target.parentElement.parentElement.remove();
+//         if (cnt.length === 1) {
+//           const emptyCart = document.createElement('p');
+//           emptyCart.textContent = 'Your cart is empty.';
+//           emptyCart.classList.add('empty-cart');
+//           document.querySelector('.cart-container').innerHTML = '';
+//           document.querySelector('.cart-container').appendChild(emptyCart);
+//         }
+//       } catch (error) {
+//         console.log('Error:', error.message);
+//       }
+//     });
+//   });
+// }
 function addEventToDeletebuttons() {
   const deleteButtons = document.querySelectorAll('.delete-btn');
   deleteButtons.forEach((button) => {
     button.addEventListener('click', async (event) => {
-      const cnt = document.querySelectorAll('.delete-btn');
+      event.preventDefault();
       const deleteFromCart = event.target.parentElement.parentElement;
-      try {
-        const response = await axios.post(
-          deleteCartItemUrl,
-          {
-            cart_item_id:
-              +deleteFromCart.querySelector('.cart-item-id').textContent,
-          },
-          {
-            withCredentials: true,
+      const result = await Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+      });
+      if (result.isConfirmed) {
+        try {
+          const response = await axios.post(
+            deleteCartItemUrl,
+            {
+              cart_item_id:
+                +deleteFromCart.querySelector('.cart-item-id').textContent,
+            },
+            {
+              withCredentials: true,
+            }
+          );
+          const cnt = document.querySelectorAll('.delete-btn');
+          deleteFromCart.remove();
+          if (cnt.length === 1) {
+            const emptyCart = document.createElement('p');
+            emptyCart.textContent = 'Your cart is empty.';
+            emptyCart.classList.add('empty-cart');
+            document.querySelector('.cart-container').innerHTML = '';
+            document.querySelector('.cart-container').appendChild(emptyCart);
           }
-        );
-        event.target.parentElement.parentElement.remove();
-        if (cnt.length === 1) {
-          const emptyCart = document.createElement('p');
-          emptyCart.textContent = 'Your cart is empty.';
-          emptyCart.classList.add('empty-cart');
-          document.querySelector('.cart-container').innerHTML = '';
-          document.querySelector('.cart-container').appendChild(emptyCart);
+          Swal.fire('Deleted!', 'Your item has been removed.', 'success');
+        } catch (error) {
+          console.log('Error:', error.message);
+          Swal.fire('Error!', 'Failed to delete the item.', 'error');
         }
-      } catch (error) {
-        console.log('Error:', error.message);
       }
     });
   });
@@ -87,36 +132,3 @@ function addEventToDeletebuttons() {
     console.log(err.message);
   }
 })();
-
-/*
-
-
-<tr>
-            <td>Electric Cruiser 200</td>
-            <td>$974.99</td>
-            <td>1</td>
-            <td>$974.99</td>
-            <td class="delete">
-              <ion-icon class="delete-btn" name="trash"></ion-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Electric Cruiser 200</td>
-            <td>$974.99</td>
-            <td>2</td>
-            <td>$1800.99</td>
-            <td class="delete">
-              <ion-icon class="delete-btn" name="trash"></ion-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Electric Cruiser 200</td>
-            <td>$100</td>
-            <td>3</td>
-            <td>$300</td>
-            <td class="delete">
-              <ion-icon class="delete-btn" name="trash"></ion-icon>
-            </td>
-          </tr>
-
-*/

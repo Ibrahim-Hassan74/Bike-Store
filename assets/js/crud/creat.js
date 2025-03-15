@@ -24,11 +24,21 @@
         const response = await axios.post(addModelUrl, data);
         console.log(response);
 
-        showCustomAlert('Model added successfully');
+        showCustomAlert(
+          'Success',
+          'Model added successfully',
+          'success',
+          'Sucessfully Added'
+        );
         // window.location.href = '/my-component/addModel.html';
       }
     } catch (e) {
-      showCustomAlert('Failed to add model');
+      showCustomAlert(
+        'Error',
+        'Failed to add model',
+        'error',
+        'Failed to add model'
+      );
       console.log(e.message);
     }
   });
